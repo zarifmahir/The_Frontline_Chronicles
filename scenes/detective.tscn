@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://ueue47hblxg4"]
 
-[ext_resource type="Script" path="res://scripts/detective.gd" id="1_amprm"]
+[ext_resource type="Script" path="res://scripts/detective.gd" id="1_rc8jv"]
 [ext_resource type="Texture2D" uid="uid://bufiannkr4j6x" path="res://assets/Player/SpriteSheet.png" id="2_4n2ct"]
 
 [sub_resource type="Animation" id="Animation_vvm46"]
@@ -103,7 +103,7 @@ _data = {
 size = Vector2(30, 7)
 
 [node name="Detective" type="CharacterBody2D"]
-script = ExtResource("1_amprm")
+script = ExtResource("1_rc8jv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
