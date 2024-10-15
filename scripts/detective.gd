@@ -1,8 +1,11 @@
-
 extends CharacterBody2D
-@export var speed=230
+
+@export var speed=200
 @onready var animations=$AnimationPlayer
 @onready var actionable_finder=$Direction/Actionable_Finder
+
+func detective():
+	pass
 func updateAnimation():
 	if velocity.length()==0:
 		if(animations.is_playing()):

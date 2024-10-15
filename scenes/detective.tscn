@@ -160,17 +160,21 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50lid"]
-size = Vector2(30, 7)
+size = Vector2(26, 3.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vade"]
+radius = 7.0
 
 [node name="Detective" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 9
 script = ExtResource("1_rc8jv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-0.0624999, -4.125)
-scale = Vector2(2.00781, 1.64063)
+position = Vector2(-3.06249, -6.62502)
+scale = Vector2(1.63281, 1.32813)
 texture = ExtResource("2_4n2ct")
 hframes = 4
 vframes = 7
@@ -181,7 +185,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
+position = Vector2(-3, 2.75)
 shape = SubResource("RectangleShape2D_50lid")
 
 [node name="Direction" type="Marker2D" parent="."]
@@ -191,5 +195,5 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/Actionable_Finder"]
-position = Vector2(0, 10)
+position = Vector2(-3, 1)
 shape = SubResource("CircleShape2D_3vade")
