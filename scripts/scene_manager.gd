@@ -1,6 +1,7 @@
 extends Node
 
 var player: Detect
+#var player:Detecte
 var last_scene_name: String
 var scene_dir_path = "res://scenes/"
 func change_scene(from, to_scene_name: String) -> void:

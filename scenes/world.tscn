@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_q37l1"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_5u5gq"]
 [ext_resource type="Texture2D" uid="uid://8weu6mk7us4w" path="res://assets/Background/BG_Normal/galletcity_tiles.png" id="3_n6kwi"]
-[ext_resource type="PackedScene" uid="uid://t53lbpbapxsb" path="res://scenes/scene_trigger_1.tscn" id="4_16u4k"]
+[ext_resource type="PackedScene" path="res://scenes/scene_trigger_1.tscn" id="4_16u4k"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="4_av7yx"]
 [ext_resource type="Texture2D" uid="uid://nplysv0nreq2" path="res://assets/Background/BG_Normal/TilesetFloor.png" id="4_r4ydk"]
-[ext_resource type="PackedScene" uid="uid://dy7jg8vsv3bqt" path="res://scenes/npc.tscn" id="5_pnssq"]
+[ext_resource type="PackedScene" uid="uid://8tcacmn7hd8j" path="res://scenes/npc.tscn" id="5_pnssq"]
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="5_tbupf"]
 [ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="6_3eaet"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="9_36djh"]
@@ -1134,12 +1134,12 @@ layer_3/name = "Cars"
 layer_3/tile_data = PackedInt32Array(-2293668, 196608, 38, -2228132, 327680, 38, -2228131, 1245184, 30, -1965987, 1245184, 30, -2228125, 65536, 24, -1965981, 524288, 24, -1965976, 65536, 28, -2228120, 524288, 28, -2228115, 524288, 24, -1965970, 524288, 28, -2228109, 524288, 28, -1965964, 65536, 28, -2228134, 1245184, 30, -1965990, 1245184, 30, -2424652, 524288, 24, -1834913, 1900544, 8, -2424737, 1900544, 8, -1769377, 1900544, 8, -2424739, 1638400, 8, -2359203, 1638400, 8, -2359205, 1638400, 8, -2097059, 1638400, 8, -1834915, 1638400, 8, -2097061, 1638400, 8, -2097058, 1638400, 8, -1769379, 1638400, 8, -2424736, 2031616, 8, -2293664, 2031616, 8, -2162592, 2031616, 8, -1965984, 2031616, 8, -1834912, 2031616, 8, -2031520, 2031616, 8, -2228128, 2031616, 8, -2097056, 2031616, 8, -2359200, 2031616, 8, -1900448, 2031616, 8, -1769376, 2031616, 8, -2097010, 2031616, 8, -2097009, 2031616, 8, -2097008, 2031616, 8, -2097007, 2031616, 8, -2097006, 2031616, 8, -2097005, 2031616, 8, -2097004, 2031616, 8, -2097003, 2031616, 8, -2097002, 2031616, 8, -2097001, 2031616, 8, -2097000, 2031616, 8, -2096999, 2031616, 8, -2096998, 2031616, 8, -2096997, 2031616, 8, -2096996, 2031616, 8, -2096995, 2031616, 8, -2096994, 2031616, 8, -2096993, 2031616, 8, -2096992, 2031616, 8, -2096991, 2031616, 8, -2096990, 2031616, 8, -2096989, 2031616, 8, -2096988, 2031616, 8, -2096987, 2031616, 8, -2096986, 2031616, 8, -2096985, 2031616, 8, -2096984, 2031616, 8, -2096983, 2031616, 8, -2096982, 2031616, 8, -2096981, 2031616, 8, -2096980, 2031616, 8, -2096979, 2031616, 8, -2096978, 2031616, 8, -2096977, 2031616, 8, -2096976, 2031616, 8, -2096975, 2031616, 8, -2096974, 2031616, 8)
 
 [node name="SceneTrigger1" parent="." instance=ExtResource("4_16u4k")]
-position = Vector2(676, 532)
+position = Vector2(665, 536)
 connected_scene = "insidebuilding1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger1"]
 z_index = 1
-position = Vector2(-0.5, 0.5)
+position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_qn17p")
 
 [node name="npc" parent="." instance=ExtResource("5_pnssq")]
