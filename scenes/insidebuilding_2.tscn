@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://b2ccktdqv6ky3"]
+[gd_scene load_steps=18 format=3 uid="uid://ck1qoai7vamsd"]
 
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_jen3o"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_vjsc5"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="3_x1fyd"]
 [ext_resource type="Texture2D" uid="uid://dhylcprk7oqk6" path="res://assets/Office/Little_Bits_office_objects.png" id="4_5ol0v"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="6_dnntw"]
-[ext_resource type="PackedScene" uid="uid://mgkvq0whrjgj" path="res://scenes/scene_trig_2.tscn" id="6_e4ux3"]
+[ext_resource type="PackedScene" path="res://scenes/scene_trig_2.tscn" id="6_e4ux3"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="7_vl5h6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8k3s"]
