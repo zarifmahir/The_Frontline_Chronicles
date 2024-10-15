@@ -1,12 +1,11 @@
-extends BaseScene
+extends Camera2D
 
-#@onready var camera = $Followcam
+@export var follow_node: Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	super()
-	#camera.follow_node = player
-	
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	global_position = follow_node.global_position

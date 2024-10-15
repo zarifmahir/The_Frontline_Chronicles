@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Detect
+
 @export var speed=200
 @onready var animations=$AnimationPlayer
 @onready var actionable_finder=$Direction/Actionable_Finder

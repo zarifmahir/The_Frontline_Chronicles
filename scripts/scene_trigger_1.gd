@@ -6,6 +6,6 @@ class_name SceneTrigger1 extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	#var full_path = scene_folder + connected_scene + ".tscn"
 	#get_tree().call_deferred("change_scene_to_file", full_path)
-	if body.has_method("detective"):
+	if body is Detect:
 		Scene_Manager.change_scene(get_owner(), connected_scene)
 	
