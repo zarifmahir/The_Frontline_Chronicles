@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://ueue47hblxg4"]
 
 [ext_resource type="Script" path="res://scripts/detective.gd" id="1_rc8jv"]
-[ext_resource type="Texture2D" uid="uid://bufiannkr4j6x" path="res://assets/Player/SpriteSheet.png" id="2_4n2ct"]
+[ext_resource type="Texture2D" uid="uid://d2jrs2yrmjqdw" path="res://assets/Player/boy.png" id="2_08wgp"]
 
 [sub_resource type="Animation" id="Animation_vvm46"]
 length = 0.001
@@ -175,7 +175,7 @@ script = ExtResource("1_rc8jv")
 texture_filter = 1
 position = Vector2(-3.06249, -6.62502)
 scale = Vector2(1.63281, 1.32813)
-texture = ExtResource("2_4n2ct")
+texture = ExtResource("2_08wgp")
 hframes = 4
 vframes = 7
 
