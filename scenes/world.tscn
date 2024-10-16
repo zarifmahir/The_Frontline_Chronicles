@@ -1,17 +1,21 @@
-[gd_scene load_steps=31 format=3 uid="uid://bq6navt7wpc1j"]
+[gd_scene load_steps=35 format=3 uid="uid://bq6navt7wpc1j"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_q37l1"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_5u5gq"]
 [ext_resource type="Texture2D" uid="uid://8weu6mk7us4w" path="res://assets/Background/BG_Normal/galletcity_tiles.png" id="3_n6kwi"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trigger_1.tscn" id="4_16u4k"]
+[ext_resource type="PackedScene" uid="uid://t53lbpbapxsb" path="res://scenes/scene_trigger_1.tscn" id="4_16u4k"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="4_av7yx"]
 [ext_resource type="Texture2D" uid="uid://nplysv0nreq2" path="res://assets/Background/BG_Normal/TilesetFloor.png" id="4_r4ydk"]
-[ext_resource type="PackedScene" uid="uid://8tcacmn7hd8j" path="res://scenes/npc.tscn" id="5_pnssq"]
+[ext_resource type="PackedScene" uid="uid://dy7jg8vsv3bqt" path="res://scenes/npc.tscn" id="5_pnssq"]
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="5_tbupf"]
 [ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="6_3eaet"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="9_36djh"]
-[ext_resource type="PackedScene" uid="uid://djhg01ufwxxdu" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
+[ext_resource type="PackedScene" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
 [ext_resource type="PackedScene" path="res://scenes/scene_trig_3.tscn" id="11_qy0ut"]
+[ext_resource type="PackedScene" uid="uid://cb15nbocn0ngr" path="res://scenes/hearts_container.tscn" id="13_hw6op"]
+[ext_resource type="PackedScene" uid="uid://bt5s5qi4qpbi" path="res://scenes/enemy_1.tscn" id="14_5kp7n"]
+[ext_resource type="PackedScene" uid="uid://c3pw1tdiwrci" path="res://scenes/enemy_2.tscn" id="15_2xqjn"]
+[ext_resource type="Script" path="res://scripts/enemy_2.gd" id="16_ftx02"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3saq1"]
 texture = ExtResource("2_5u5gq")
@@ -321,8 +325,7 @@ texture = ExtResource("2_5u5gq")
 18:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.0094, 13.8898, -24.8031, 44.0504, -22.539, 48.26, -16.0867, 47.8181, -15.8215, 29.5217, 16.1751, 30.8475, 17.1473, 48.1717, 24.8031, 48.0189, 25.5968, 37.3039, 24.8031, 17.0646, 23.2157, 11.9055)
 44:12/size_in_atlas = Vector2i(12, 8)
 44:12/0 = 0
-44:12/0/z_index = 1
-44:12/0/y_sort_origin = 1
+44:12/0/y_sort_origin = -54
 24:32/size_in_atlas = Vector2i(1, 2)
 24:32/0 = 0
 24:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.25, 8, -4.375, 12.75, -0.25, 14.875, 3.875, 13.125, 2.125, 8)
@@ -1071,7 +1074,8 @@ texture = ExtResource("4_r4ydk")
 19:25/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_msnhr"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_3saq1")
 sources/1 = SubResource("TileSetAtlasSource_jnryh")
 sources/2 = SubResource("TileSetAtlasSource_eq2gq")
@@ -1154,9 +1158,10 @@ dialogue_start = "Start"
 shape = SubResource("CircleShape2D_otrwe")
 
 [node name="Detective" parent="." instance=ExtResource("4_av7yx")]
-z_index = 3
-z_as_relative = false
 position = Vector2(552, 592)
+collision_layer = 11
+collision_mask = 3
+knockbackpower = 1500
 
 [node name="Followcam" type="Camera2D" parent="Detective"]
 position = Vector2(0, 2)
@@ -1272,6 +1277,30 @@ position = Vector2(2637, -188)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-14, 505)
 shape = SubResource("RectangleShape2D_sdpj3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("13_hw6op")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemy1" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("14_5kp7n")]
+y_sort_enabled = true
+position = Vector2(873, 618)
+collision_layer = 2
+collision_mask = 2
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy1"]
+position = Vector2(-1, -66)
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("15_2xqjn")]
+y_sort_enabled = true
+position = Vector2(1205, 622)
+script = ExtResource("16_ftx02")
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy2"]
+position = Vector2(-2, -57)
 
 [connection signal="body_entered" from="scene_trig2" to="scene_trig2" method="_on_body_entered"]
 [connection signal="body_entered" from="Scene_trig3" to="Scene_trig3" method="_on_body_entered"]

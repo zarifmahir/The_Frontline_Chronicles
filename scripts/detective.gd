@@ -2,9 +2,16 @@ extends CharacterBody2D
 
 class_name Detect
 
+signal healthchanged
+
 @export var speed=200
 @onready var animations=$AnimationPlayer
 @onready var actionable_finder=$Direction/Actionable_Finder
+
+@export var maxHealth = 3
+@onready var currentHealth: int = maxHealth
+
+@export var knockbackpower: int = 500
 
 func detective():
 	pass
@@ -32,4 +39,18 @@ func handleInput():
 func _physics_process(delta: float) -> void:
 	handleInput()
 	updateAnimation()
+	move_and_slide()
+	
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	if area.name == "hitBox":
+		currentHealth -= 1
+		if currentHealth<0:
+			currentHealth = maxHealth
+			
+		healthchanged.emit(currentHealth)
+		knockback(area.get_parent().velocity)
+		
+func knockback(enemyVelocity: Vector2):
+	var knockbackdirection = (enemyVelocity-velocity).normalized()*knockbackpower 
+	velocity = knockbackdirection
 	move_and_slide()
