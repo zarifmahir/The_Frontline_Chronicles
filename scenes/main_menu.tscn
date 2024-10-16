@@ -1,0 +1,135 @@
+[gd_scene load_steps=7 format=3 uid="uid://bih3ii76jxjbc"]
+
+[ext_resource type="Texture2D" uid="uid://f228hoqsy4ka" path="res://assets/Background/Bangladesh.png" id="1_8d20d"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jp1uc"]
+[ext_resource type="FontFile" uid="uid://rmcty560ykg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_3vraf"]
+[ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="3_fs3u4"]
+[ext_resource type="PackedScene" uid="uid://d4kec34vycma4" path="res://scenes/options_menu.tscn" id="5_to4aj"]
+[ext_resource type="AudioStream" uid="uid://5son23tb41je" path="res://assets/music/Dark Fantasy Tiktok Song (slowed  reverb) Yamaha - Dorian concept.mp3" id="6_1eyy0"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jp1uc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.00001
+offset_top = 1.0
+offset_right = 136.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.901044, 0.994954)
+texture = ExtResource("1_8d20d")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Separator2" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 82
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_3vraf")
+theme_override_font_sizes/font_size = 40
+text = "THE FRONTLINE CHRONICLES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator6" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator7" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.00019212, 9.97123e-05, 9.83161e-07, 1)
+theme_override_colors/font_outline_color = Color(0.133556, 0.372896, 0.359463, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/h_separation = 5
+theme_override_fonts/font = ExtResource("3_fs3u4")
+theme_override_font_sizes/font_size = 25
+text = "PLAY GAME
+"
+
+[node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.00019212, 9.97123e-05, 9.83161e-07, 1)
+theme_override_colors/font_outline_color = Color(0.133333, 0.372549, 0.360784, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_fs3u4")
+theme_override_font_sizes/font_size = 25
+text = "OPTIONS"
+
+[node name="Separator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.00019212, 9.97123e-05, 9.83161e-07, 1)
+theme_override_colors/font_outline_color = Color(0.133333, 0.372549, 0.360784, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_fs3u4")
+theme_override_font_sizes/font_size = 25
+text = "QUIT GAME
+"
+
+[node name="Options_menu" parent="." instance=ExtResource("5_to4aj")]
+visible = false
+layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1eyy0")
+volume_db = -20.0
+autoplay = true

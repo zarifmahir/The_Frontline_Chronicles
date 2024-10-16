@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bfy1kam4fdsch"]
+
+[node name="scene_manager" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -20.0
+autoplay = true

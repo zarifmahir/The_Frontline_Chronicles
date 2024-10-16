@@ -2,6 +2,8 @@ class_name BaseScene extends Node
 
 @onready var player: Detect = $Detective
 @onready var entrancemarkers: Node2D = $EntranceMarkers
+@onready var sund = $AudioStreamPlayer2D
+
 func _ready() -> void:
 	if Scene_Manager.player:
 		if player:

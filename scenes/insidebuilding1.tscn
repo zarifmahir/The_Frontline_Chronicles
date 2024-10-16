@@ -1,11 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://cmbektmsw8uk8"]
+[gd_scene load_steps=18 format=3 uid="uid://cmbektmsw8uk8"]
 
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_6l0uw"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="1_y5tme"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="3_2ovfg"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trigger_1.tscn" id="3_8s2lb"]
+[ext_resource type="PackedScene" uid="uid://t53lbpbapxsb" path="res://scenes/scene_trigger_1.tscn" id="3_8s2lb"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="3_e4f25"]
 [ext_resource type="Texture2D" uid="uid://dhylcprk7oqk6" path="res://assets/Office/Little_Bits_office_objects.png" id="4_7jgbl"]
+[ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="7_u63sc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xo1qb"]
 texture = ExtResource("1_y5tme")
@@ -743,7 +744,13 @@ connected_scene = "world"
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_psvc1")
 
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="SceneTrigger1"]
+volume_db = -20.0
+
 [node name="Detective" parent="." instance=ExtResource("3_2ovfg")]
+y_sort_enabled = true
+collision_layer = 9
+collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Detective"]
 
@@ -783,3 +790,8 @@ physics_material_override = SubResource("PhysicsMaterial_hk4dx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
 position = Vector2(0, 6)
 shape = SubResource("SegmentShape2D_5154p")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_u63sc")
+volume_db = -20.0
+autoplay = true

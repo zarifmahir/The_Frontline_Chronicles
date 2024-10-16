@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5son23tb41je"
+path="res://.godot/imported/Dark Fantasy Tiktok Song (slowed  reverb) Yamaha - Dorian concept.mp3-941b29aa7f346d163a86b2e73720cb8c.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Dark Fantasy Tiktok Song (slowed  reverb) Yamaha - Dorian concept.mp3"
+dest_files=["res://.godot/imported/Dark Fantasy Tiktok Song (slowed  reverb) Yamaha - Dorian concept.mp3-941b29aa7f346d163a86b2e73720cb8c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

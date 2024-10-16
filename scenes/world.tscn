@@ -1,21 +1,22 @@
-[gd_scene load_steps=35 format=3 uid="uid://bq6navt7wpc1j"]
+[gd_scene load_steps=36 format=3 uid="uid://bq6navt7wpc1j"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_q37l1"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_5u5gq"]
 [ext_resource type="Texture2D" uid="uid://8weu6mk7us4w" path="res://assets/Background/BG_Normal/galletcity_tiles.png" id="3_n6kwi"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trigger_1.tscn" id="4_16u4k"]
+[ext_resource type="PackedScene" uid="uid://t53lbpbapxsb" path="res://scenes/scene_trigger_1.tscn" id="4_16u4k"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="4_av7yx"]
 [ext_resource type="Texture2D" uid="uid://nplysv0nreq2" path="res://assets/Background/BG_Normal/TilesetFloor.png" id="4_r4ydk"]
-[ext_resource type="PackedScene" uid="uid://8tcacmn7hd8j" path="res://scenes/npc.tscn" id="5_pnssq"]
+[ext_resource type="PackedScene" uid="uid://dy7jg8vsv3bqt" path="res://scenes/npc.tscn" id="5_pnssq"]
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="5_tbupf"]
 [ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="6_3eaet"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="9_36djh"]
-[ext_resource type="PackedScene" uid="uid://djhg01ufwxxdu" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
+[ext_resource type="PackedScene" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
 [ext_resource type="PackedScene" path="res://scenes/scene_trig_3.tscn" id="11_qy0ut"]
 [ext_resource type="PackedScene" uid="uid://cb15nbocn0ngr" path="res://scenes/hearts_container.tscn" id="13_hw6op"]
-[ext_resource type="PackedScene" uid="uid://bt5s5qi4qpbi" path="res://scenes/enemy_1.tscn" id="14_5kp7n"]
-[ext_resource type="PackedScene" uid="uid://c3pw1tdiwrci" path="res://scenes/enemy_2.tscn" id="15_2xqjn"]
+[ext_resource type="PackedScene" uid="uid://bkxo7w5mdb111" path="res://scenes/enemy_1.tscn" id="14_5kp7n"]
+[ext_resource type="PackedScene" uid="uid://d1b5wue4smvr2" path="res://scenes/enemy_2.tscn" id="15_2xqjn"]
 [ext_resource type="Script" path="res://scripts/enemy_2.gd" id="16_ftx02"]
+[ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="17_fn27b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3saq1"]
 texture = ExtResource("2_5u5gq")
@@ -1158,12 +1159,15 @@ dialogue_start = "Start"
 shape = SubResource("CircleShape2D_otrwe")
 
 [node name="Detective" parent="." instance=ExtResource("4_av7yx")]
+y_sort_enabled = true
 position = Vector2(552, 592)
+collision_layer = 9
+collision_mask = 1
 knockbackpower = 1500
 
 [node name="Followcam" type="Camera2D" parent="Detective"]
 position = Vector2(0, 2)
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(1.3, 1.3)
 limit_right = 100000000
 
 [node name="npc(junction)" parent="." instance=ExtResource("5_pnssq")]
@@ -1297,6 +1301,10 @@ endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemy2"]
 position = Vector2(-2, -57)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_fn27b")
+volume_db = -15.0
 
 [connection signal="body_entered" from="scene_trig2" to="scene_trig2" method="_on_body_entered"]
 [connection signal="body_entered" from="Scene_trig3" to="Scene_trig3" method="_on_body_entered"]
