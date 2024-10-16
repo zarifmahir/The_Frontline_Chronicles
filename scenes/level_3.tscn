@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenes/road.tscn" id="4_himxq"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="5_tcu5g"]
 [ext_resource type="Texture2D" uid="uid://8weu6mk7us4w" path="res://assets/Background/BG_Normal/galletcity_tiles.png" id="6_fqosy"]
-[ext_resource type="Texture2D" path="res://assets/tilema.png" id="7_7axvv"]
+[ext_resource type="Texture2D" uid="uid://djhk2rgrql2uf" path="res://assets/tilema.png" id="7_7axvv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ko4o8"]
 texture = ExtResource("5_tcu5g")
