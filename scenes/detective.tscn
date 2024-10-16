@@ -168,6 +168,21 @@ radius = 7.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6v6v"]
 size = Vector2(25, 20)
 
+[sub_resource type="Animation" id="Animation_vmiop"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.996078, 0, 0.0235294, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_afdbc"]
 resource_name = "hurtBlink"
 length = 0.4
@@ -184,21 +199,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.996078, 0, 0.0235294, 0.682353), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_vmiop"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.996078, 0, 0.0235294, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ry05s"]
@@ -263,3 +263,4 @@ libraries = {
 one_shot = true
 
 [connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_exited" from="hurtBox" to="." method="_on_hurt_box_area_exited"]
