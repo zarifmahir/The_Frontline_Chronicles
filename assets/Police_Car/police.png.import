@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djhk2rgrql2uf"
-path="res://.godot/imported/tilema.png-32643371d261f667adeba39440684583.ctex"
+uid="uid://bd7nndju0al0u"
+path="res://.godot/imported/police.png-a452aaebccbbdef8135233d2c68fbf3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilema.png"
-dest_files=["res://.godot/imported/tilema.png-32643371d261f667adeba39440684583.ctex"]
+source_file="res://assets/Police_Car/police.png"
+dest_files=["res://.godot/imported/police.png-a452aaebccbbdef8135233d2c68fbf3f.ctex"]
 
 [params]
 

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmieqsomsjj7p"]
+
+[ext_resource type="PackedScene" uid="uid://b0c6r6bnufsti" path="res://scenes/police.tscn" id="1_yyrpj"]
+
+[node name="newPolice" instance=ExtResource("1_yyrpj")]
