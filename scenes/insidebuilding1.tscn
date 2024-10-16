@@ -749,8 +749,6 @@ volume_db = -20.0
 
 [node name="Detective" parent="." instance=ExtResource("3_2ovfg")]
 y_sort_enabled = true
-collision_layer = 9
-collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Detective"]
 

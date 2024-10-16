@@ -16,8 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cb15nbocn0ngr" path="res://scenes/hearts_container.tscn" id="13_hw6op"]
 [ext_resource type="PackedScene" uid="uid://bkxo7w5mdb111" path="res://scenes/enemy_1.tscn" id="14_5kp7n"]
 [ext_resource type="PackedScene" uid="uid://d1b5wue4smvr2" path="res://scenes/enemy_2.tscn" id="15_2xqjn"]
-[ext_resource type="Script" path="res://scripts/enemy_2.gd" id="16_ftx02"]
 [ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="17_fn27b"]
+[ext_resource type="PackedScene" uid="uid://dtqluam21ut3j" path="res://scenes/enemy_3.tscn" id="18_05xve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n18w1"]
 size = Vector2(132, 84.5)
@@ -1172,10 +1172,9 @@ dialogue_start = "Start"
 shape = SubResource("CircleShape2D_otrwe")
 
 [node name="Detective" parent="." instance=ExtResource("4_av7yx")]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(552, 592)
-collision_layer = 9
-collision_mask = 1
 knockbackpower = 1500
 
 [node name="Followcam" type="Camera2D" parent="Detective"]
@@ -1300,6 +1299,7 @@ shape = SubResource("RectangleShape2D_sdpj3")
 metadata/_edit_use_anchors_ = true
 
 [node name="Enemy1" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("14_5kp7n")]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(873, 618)
 endPoint = NodePath("Marker2D")
@@ -1308,9 +1308,9 @@ endPoint = NodePath("Marker2D")
 position = Vector2(-1, -66)
 
 [node name="Enemy2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("15_2xqjn")]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(1205, 622)
-script = ExtResource("16_ftx02")
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemy2"]
@@ -1320,6 +1320,11 @@ position = Vector2(-2, -57)
 position = Vector2(1, 0)
 stream = ExtResource("17_fn27b")
 volume_db = -1.0
+
+[node name="enemy3" parent="." instance=ExtResource("18_05xve")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(2391, 93)
 
 [connection signal="body_entered" from="scene_trig2" to="scene_trig2" method="_on_body_entered"]
 [connection signal="body_entered" from="Scene_trig3" to="Scene_trig3" method="_on_body_entered"]
