@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bq6navt7wpc1j"]
+[gd_scene load_steps=39 format=3 uid="uid://bq6navt7wpc1j"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_q37l1"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_5u5gq"]
@@ -7,17 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://t53lbpbapxsb" path="res://scenes/scene_trigger_1.tscn" id="4_16u4k"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="4_av7yx"]
 [ext_resource type="Texture2D" uid="uid://nplysv0nreq2" path="res://assets/Background/BG_Normal/TilesetFloor.png" id="4_r4ydk"]
-[ext_resource type="PackedScene" uid="uid://dy7jg8vsv3bqt" path="res://scenes/npc.tscn" id="5_pnssq"]
+[ext_resource type="PackedScene" uid="uid://8tcacmn7hd8j" path="res://scenes/npc.tscn" id="5_pnssq"]
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="5_tbupf"]
 [ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="6_3eaet"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="9_36djh"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trig_3.tscn" id="11_qy0ut"]
+[ext_resource type="PackedScene" uid="uid://djhg01ufwxxdu" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
+[ext_resource type="PackedScene" uid="uid://0k4pn7ae40co" path="res://scenes/scene_trig_3.tscn" id="11_qy0ut"]
 [ext_resource type="PackedScene" uid="uid://cb15nbocn0ngr" path="res://scenes/hearts_container.tscn" id="13_hw6op"]
 [ext_resource type="PackedScene" uid="uid://bkxo7w5mdb111" path="res://scenes/enemy_1.tscn" id="14_5kp7n"]
 [ext_resource type="PackedScene" uid="uid://d1b5wue4smvr2" path="res://scenes/enemy_2.tscn" id="15_2xqjn"]
+[ext_resource type="Script" path="res://scripts/enemy_2.gd" id="16_ftx02"]
 [ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="17_fn27b"]
-[ext_resource type="PackedScene" uid="uid://dtqluam21ut3j" path="res://scenes/enemy_3.tscn" id="18_05xve"]
+[ext_resource type="AudioStream" uid="uid://b46q0rd5tl6h5" path="res://assets/music/calm_game_music_1-49209.mp3" id="19_rk7b0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n18w1"]
 size = Vector2(132, 84.5)
@@ -1172,9 +1173,10 @@ dialogue_start = "Start"
 shape = SubResource("CircleShape2D_otrwe")
 
 [node name="Detective" parent="." instance=ExtResource("4_av7yx")]
-z_index = 1
 y_sort_enabled = true
 position = Vector2(552, 592)
+collision_layer = 9
+collision_mask = 1
 knockbackpower = 1500
 
 [node name="Followcam" type="Camera2D" parent="Detective"]
@@ -1299,7 +1301,6 @@ shape = SubResource("RectangleShape2D_sdpj3")
 metadata/_edit_use_anchors_ = true
 
 [node name="Enemy1" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("14_5kp7n")]
-z_index = 1
 y_sort_enabled = true
 position = Vector2(873, 618)
 endPoint = NodePath("Marker2D")
@@ -1308,9 +1309,9 @@ endPoint = NodePath("Marker2D")
 position = Vector2(-1, -66)
 
 [node name="Enemy2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("15_2xqjn")]
-z_index = 1
 y_sort_enabled = true
 position = Vector2(1205, 622)
+script = ExtResource("16_ftx02")
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemy2"]
@@ -1320,11 +1321,13 @@ position = Vector2(-2, -57)
 position = Vector2(1, 0)
 stream = ExtResource("17_fn27b")
 volume_db = -1.0
+bus = &"SFX"
 
-[node name="enemy3" parent="." instance=ExtResource("18_05xve")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(2391, 93)
+[node name="MusicStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_rk7b0")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="scene_trig2" to="scene_trig2" method="_on_body_entered"]
 [connection signal="body_entered" from="Scene_trig3" to="Scene_trig3" method="_on_body_entered"]

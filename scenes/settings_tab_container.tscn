@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://chbp8f7si25e3"]
+[gd_scene load_steps=3 format=3 uid="uid://chbp8f7si25e3"]
+
+[ext_resource type="PackedScene" uid="uid://bah126scf8si8" path="res://scenes/audio_slider_settings.tscn" id="1_xtbk3"]
+[ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="2_iftuf"]
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -40,27 +43,66 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Master" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_xtbk3")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Music" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_xtbk3")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="SFX" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_xtbk3")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Instructions" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Instructions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Instructions/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Sound 1" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/Instructions/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "123123"
+theme_override_fonts/font = ExtResource("2_iftuf")
+text = "Puzzle mystery game themed around the quota reform movement!
 
-[node name="Sound 2" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
 
-[node name="Sound 3" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
+Use Arrow Keys to move. 
+Talk to the characters, 
+and try to make it to the end!
+
+
+Enjoy < 3"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 1
+metadata/_tab_index = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
 layout_mode = 1
@@ -96,47 +138,5 @@ layout_mode = 2
 text = "123123"
 
 [node name="Label5" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
-
-[node name="Instructions" type="TabBar" parent="TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Instructions"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Instructions/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
-
-[node name="Label" type="Label" parent="TabContainer/Instructions/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
-
-[node name="Label2" type="Label" parent="TabContainer/Instructions/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
-
-[node name="Label3" type="Label" parent="TabContainer/Instructions/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
-
-[node name="Label4" type="Label" parent="TabContainer/Instructions/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
-
-[node name="Label5" type="Label" parent="TabContainer/Instructions/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "123123"

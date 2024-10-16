@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dryvt4d4uc4w"]
+[gd_scene load_steps=12 format=3 uid="uid://dryvt4d4uc4w"]
 
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="1_dyu3w"]
 [ext_resource type="Texture2D" uid="uid://dhylcprk7oqk6" path="res://assets/Office/Little_Bits_office_objects.png" id="2_hajyp"]
 [ext_resource type="Texture2D" uid="uid://b47kx58b2f8e6" path="res://assets/Office/Little_Bits_office_walls.png" id="3_1xmjq"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="4_mi8uq"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="5_bklt0"]
+[ext_resource type="AudioStream" path="res://assets/music/theme_swamp.mp3" id="6_xjn6u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4r5n4"]
 texture = ExtResource("1_dyu3w")
@@ -793,4 +794,8 @@ speed = 210
 [node name="Camera2D" type="Camera2D" parent="Detective"]
 zoom = Vector2(2.6, 2.6)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_xjn6u")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
