@@ -1330,6 +1330,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="enemy3" parent="." instance=ExtResource("19_f0box")]
+z_index = 1
 position = Vector2(2220, 324)
 
 [connection signal="body_entered" from="scene_trig2" to="scene_trig2" method="_on_body_entered"]
