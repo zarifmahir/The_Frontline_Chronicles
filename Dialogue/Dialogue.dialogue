@@ -15,7 +15,7 @@ Farhan: You'll never know unless you knock on the doors.
 ~ junc
 Player: Sir, do you know where Nur and Nehal are?
 Saad: Who are you?
-- I am their friend:
+- I am their friend
 	set convo="had"
 	Player: We studied in DRMC together.
 	Saad: I see. I heard Modhu talking about them.
