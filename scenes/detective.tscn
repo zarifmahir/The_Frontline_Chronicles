@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/detective.gd" id="1_rc8jv"]
 [ext_resource type="Texture2D" uid="uid://d2jrs2yrmjqdw" path="res://assets/Player/boy.png" id="2_08wgp"]
-[ext_resource type="PackedScene" path="res://scenes/sword.tscn" id="3_2ah86"]
+[ext_resource type="PackedScene" uid="uid://bgm6sav3m33jq" path="res://scenes/sword.tscn" id="3_2ah86"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="3_nhops"]
 
 [sub_resource type="Animation" id="Animation_ugdl7"]
