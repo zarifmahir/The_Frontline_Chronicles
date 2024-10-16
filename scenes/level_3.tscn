@@ -1,13 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsfr60h0ut403"]
+[gd_scene load_steps=13 format=3 uid="uid://bk55eeqq15m7n"]
 
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_kji31"]
-[ext_resource type="PackedScene" uid="uid://dsqcgr8ob32kr" path="res://scenes/car.tscn" id="2_vlsj4"]
-[ext_resource type="PackedScene" uid="uid://b0c6r6bnufsti" path="res://scenes/police.tscn" id="3_6e0w0"]
-[ext_resource type="PackedScene" uid="uid://dmieqsomsjj7p" path="res://scenes/new_police.tscn" id="3_mgqbg"]
-[ext_resource type="PackedScene" uid="uid://bvrwevoygam7f" path="res://scenes/road.tscn" id="4_himxq"]
+[ext_resource type="PackedScene" path="res://scenes/car.tscn" id="2_vlsj4"]
+[ext_resource type="PackedScene" path="res://scenes/police.tscn" id="3_6e0w0"]
+[ext_resource type="PackedScene" path="res://scenes/new_police.tscn" id="3_mgqbg"]
+[ext_resource type="PackedScene" path="res://scenes/road.tscn" id="4_himxq"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="5_tcu5g"]
 [ext_resource type="Texture2D" uid="uid://8weu6mk7us4w" path="res://assets/Background/BG_Normal/galletcity_tiles.png" id="6_fqosy"]
-[ext_resource type="Texture2D" uid="uid://djhk2rgrql2uf" path="res://tilema.png" id="7_7axvv"]
+[ext_resource type="Texture2D" path="res://assets/tilema.png" id="7_7axvv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ko4o8"]
 texture = ExtResource("5_tcu5g")
