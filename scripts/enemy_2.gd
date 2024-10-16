@@ -6,7 +6,10 @@ var endPos
 @export var limit=0.5
 @export var endPoint : Marker2D
 @onready var animation = $AnimatedSprite2D
+@onready var anime = $AnimationPlayer
 
+var isdead: bool = false
+var count: int = 0
 func _ready():
 	startPos =position
 	endPos = endPoint.global_position
@@ -29,3 +32,14 @@ func _physics_process(delta):
 	updateVelocity()
 	move_and_slide()
 	updateAnimation()
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.name == "Sword":
+		count += 1
+		if count<2: return
+		$hitBox.set_deferred("monitorable", false)
+		anime.play("death")
+		isdead = true
+		await anime.animation_finished
+		queue_free()

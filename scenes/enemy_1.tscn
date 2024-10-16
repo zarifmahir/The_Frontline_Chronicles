@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bkxo7w5mdb111"]
+[gd_scene load_steps=27 format=3 uid="uid://b71rq87wiisio"]
 
 [ext_resource type="Texture2D" uid="uid://dv1ncje437egg" path="res://enemy/Knights.png" id="1_f8erl"]
 [ext_resource type="Script" path="res://scripts/enemy_1.gd" id="1_k64pe"]
+[ext_resource type="Texture2D" uid="uid://tqnv1f7gfi1k" path="res://assets/smoke.png" id="3_aigmr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fut32"]
 atlas = ExtResource("1_f8erl")
@@ -151,11 +152,98 @@ height = 16.0
 radius = 5.0
 height = 16.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lknej"]
+radius = 7.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_2h0je"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("deatheffect:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("deatheffect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_c0jye"]
+resource_name = "death"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("deatheffect:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("deatheffect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gmgdf"]
+_data = {
+"RESET": SubResource("Animation_2h0je"),
+"death": SubResource("Animation_c0jye")
+}
+
 [node name="Enemy1" type="CharacterBody2D"]
-z_index = 1
 texture_filter = 1
-collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_k64pe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -173,3 +261,23 @@ texture_filter = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
 shape = SubResource("CapsuleShape2D_4cl2m")
+
+[node name="hurtbux" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbux"]
+shape = SubResource("CapsuleShape2D_lknej")
+
+[node name="deatheffect" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -4)
+texture = ExtResource("3_aigmr")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gmgdf")
+}
+
+[connection signal="area_entered" from="hurtbux" to="." method="_on_hurtbux_area_entered"]

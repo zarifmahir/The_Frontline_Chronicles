@@ -9,27 +9,42 @@ signal healthchanged
 @onready var actionable_finder=$Direction/Actionable_Finder
 @onready var effects = $Effects
 
+@onready var hurtBox = $hurtBox
+
 @onready var hurttimer = $hurtTimer
 @export var maxHealth = 3
 @onready var currentHealth: int = maxHealth
 
+
+@onready var weapon = $weapon
 @export var knockbackpower: int =900
+
+
+var direction
+var lastAnimeDirection: String = "Down"
 var ishurt: bool = false
+var isAttacking: bool = false
+
 func detective():
 	pass
 
 func _ready() -> void:
 	effects.play("RESET")
+	weapon.disable()
+	
 func updateAnimation():
+	if isAttacking: return
 	if velocity.length()==0:
 		if(animations.is_playing()):
 			animations.stop()
 	else:
-		var direction="Down"
+		direction="Down"
 		if velocity.x<0:direction="Left"
 		elif velocity.x>0:direction="Right"
 		elif velocity.y<0:direction="Up"
 		animations.play("walk"+direction)
+		lastAnimeDirection = direction
+		
 func handleInput():
 	
 	if Input.is_action_just_pressed("Chat"):
@@ -40,12 +55,24 @@ func handleInput():
 	
 	var moveDirection=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	velocity=moveDirection*speed
-
+	
+	if Input.is_action_just_pressed("attack"):
+		attac()
+		
+func attac():
+	animations.play("Attack"+lastAnimeDirection)
+	isAttacking = true
+	weapon.enable()
+	await animations.animation_finished
+	weapon.disable()
+	animations.play("walk"+lastAnimeDirection)
+	isAttacking = false
+	
 func _physics_process(delta: float) -> void:
 	if !ishurt:
 		handleInput()
-		updateAnimation()
 		move_and_slide()
+		updateAnimation()
 	
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if ishurt: return
