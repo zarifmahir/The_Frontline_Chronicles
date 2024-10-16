@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpb8hwwxf3ava"]
+[gd_scene load_steps=3 format=3 uid="uid://bah126scf8si8"]
 
 [ext_resource type="Script" path="res://scripts/audio_slider_settings.gd" id="1_a6cvp"]
 [ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="2_dj4c4"]
