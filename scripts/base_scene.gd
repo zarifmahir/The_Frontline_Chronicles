@@ -1,8 +1,9 @@
 class_name BaseScene extends Node
 
+
 @onready var player: Detect = $Detective
 @onready var entrancemarkers: Node2D = $EntranceMarkers
-@onready var sund = $AudioStreamPlayer2D
+@onready var sund: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	if Scene_Manager.player:
@@ -13,11 +14,14 @@ func _ready() -> void:
 		add_child(player)
 		
 	position_player()
+	
+
 
 func position_player():
 	var last_scene = Scene_Manager.last_scene_name
 	if last_scene.is_empty():
 		last_scene = "any"
+	else: sund.play(0)
 	for entrance in entrancemarkers.get_children():
 		if entrance is Marker2D and entrance.name == "any" or entrance.name == last_scene:
 			player.global_position = entrance.global_position
