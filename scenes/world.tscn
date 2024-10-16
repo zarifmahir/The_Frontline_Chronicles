@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_q37l1"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_5u5gq"]
-[ext_resource type="PackedScene" uid="uid://c22bnlvdcp8sv" path="res://scenes/scene_trig_4.tscn" id="2_a0oal"]
+[ext_resource type="PackedScene" path="res://scenes/scene_trig_4.tscn" id="2_a0oal"]
 [ext_resource type="Texture2D" uid="uid://8weu6mk7us4w" path="res://assets/Background/BG_Normal/galletcity_tiles.png" id="3_n6kwi"]
 [ext_resource type="PackedScene" uid="uid://t53lbpbapxsb" path="res://scenes/scene_trigger_1.tscn" id="4_16u4k"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="4_av7yx"]
@@ -13,11 +13,11 @@
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="9_36djh"]
 [ext_resource type="PackedScene" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
 [ext_resource type="PackedScene" path="res://scenes/scene_trig_3.tscn" id="11_qy0ut"]
-[ext_resource type="PackedScene" uid="uid://cb15nbocn0ngr" path="res://scenes/hearts_container.tscn" id="13_hw6op"]
-[ext_resource type="PackedScene" uid="uid://bkxo7w5mdb111" path="res://scenes/enemy_1.tscn" id="14_5kp7n"]
-[ext_resource type="PackedScene" uid="uid://d1b5wue4smvr2" path="res://scenes/enemy_2.tscn" id="15_2xqjn"]
+[ext_resource type="PackedScene" path="res://scenes/hearts_container.tscn" id="13_hw6op"]
+[ext_resource type="PackedScene" uid="uid://b71rq87wiisio" path="res://scenes/enemy_1.tscn" id="14_5kp7n"]
+[ext_resource type="PackedScene" uid="uid://db32afdf17acm" path="res://scenes/enemy_2.tscn" id="15_2xqjn"]
 [ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="17_fn27b"]
-[ext_resource type="PackedScene" uid="uid://dtqluam21ut3j" path="res://scenes/enemy_3.tscn" id="18_05xve"]
+[ext_resource type="PackedScene" uid="uid://crm1und7ado7c" path="res://scenes/enemy_3.tscn" id="18_05xve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n18w1"]
 size = Vector2(132, 84.5)

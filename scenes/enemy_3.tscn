@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dtqluam21ut3j"]
+[gd_scene load_steps=19 format=3 uid="uid://crm1und7ado7c"]
 
 [ext_resource type="Script" path="res://scripts/enemy_3.gd" id="1_fphx8"]
 [ext_resource type="Texture2D" uid="uid://d4m1jh608cvk1" path="res://assets/Ninja_Sprite_Base_by_RorySoh_on_DeviantArt-removebg-preview.png" id="2_hkc6c"]
