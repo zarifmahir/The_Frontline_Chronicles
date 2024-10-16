@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="1_42n6p"]
 [ext_resource type="Script" path="res://scenes/options_menu.gd" id="1_p7073"]
-[ext_resource type="PackedScene" path="res://scenes/settings_tab_container.tscn" id="3_onhka"]
+[ext_resource type="PackedScene" uid="uid://chbp8f7si25e3" path="res://scenes/settings_tab_container.tscn" id="3_onhka"]
 
 [node name="Options_menu" type="Control"]
 layout_mode = 3
