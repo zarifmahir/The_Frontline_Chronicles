@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="5_tbupf"]
 [ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="6_3eaet"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="9_36djh"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
+[ext_resource type="PackedScene" uid="uid://djhg01ufwxxdu" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
 [ext_resource type="PackedScene" path="res://scenes/scene_trig_3.tscn" id="11_qy0ut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3saq1"]
@@ -1148,6 +1148,7 @@ scale = Vector2(1.2, 1.2)
 
 [node name="Actionables" parent="npc" instance=ExtResource("5_tbupf")]
 dialogue_resource = ExtResource("6_3eaet")
+dialogue_start = "Start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Actionables"]
 shape = SubResource("CircleShape2D_otrwe")
@@ -1155,7 +1156,7 @@ shape = SubResource("CircleShape2D_otrwe")
 [node name="Detective" parent="." instance=ExtResource("4_av7yx")]
 z_index = 3
 z_as_relative = false
-position = Vector2(935, 599)
+position = Vector2(552, 592)
 
 [node name="Followcam" type="Camera2D" parent="Detective"]
 position = Vector2(0, 2)
@@ -1167,6 +1168,7 @@ position = Vector2(2182, 66)
 
 [node name="Actionables" parent="npc(junction)" instance=ExtResource("5_tbupf")]
 dialogue_resource = ExtResource("6_3eaet")
+dialogue_start = "junc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc(junction)/Actionables"]
 shape = SubResource("CircleShape2D_4q72c")
@@ -1210,6 +1212,7 @@ up_direction = Vector2(0, 1)
 
 [node name="Actionables" parent="npc_5" instance=ExtResource("5_tbupf")]
 dialogue_resource = ExtResource("6_3eaet")
+dialogue_start = "Modhu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc_5/Actionables"]
 position = Vector2(-1, 0)
@@ -1231,14 +1234,14 @@ position = Vector2(662, 559)
 
 [node name="Insidebuilding2" type="Marker2D" parent="EntranceMarkers"]
 z_index = 1
-position = Vector2(2872, -527)
+position = Vector2(2612, -539)
 
 [node name="Insidebuilding3" type="Marker2D" parent="EntranceMarkers"]
 z_index = 1
-position = Vector2(2930, -446)
+position = Vector2(2615, 78)
 
 [node name="scene_trig2" parent="." instance=ExtResource("9_uk5uo")]
-position = Vector2(2872, -558)
+position = Vector2(2613, -562)
 script = ExtResource("9_36djh")
 connected_scene = "insidebuilding_2"
 
@@ -1248,7 +1251,7 @@ position = Vector2(-1.75, -1)
 shape = SubResource("RectangleShape2D_bltem")
 
 [node name="Scene_trig3" parent="." instance=ExtResource("11_qy0ut")]
-position = Vector2(3014, -441)
+position = Vector2(2615, 25)
 script = ExtResource("9_36djh")
 connected_scene = "insidebuilding_3"
 

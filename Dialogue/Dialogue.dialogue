@@ -1,7 +1,50 @@
-~ start
-Farhan : Hello There.
+#The one at the beginning of map
+~ Start
+Abid: I heard  Noor and his brother Nehal are in grave danger.You should quickly meet them.
+Player: I can't waste any time.I'm on my way. 
+=> END
+
+
+~ Two
+Farhan : Some building gates are open and some are closed.
+Farhan: You'll never know unless you knock on the doors.
 => END 
 
-~ npc2
-Saad: Yeah really good
+
+
+~ junc
+Player: Sir, do you know where Nur and Nehal are?
+Saad: Who are you?
+- I am their friend:
+	set convo="had"
+	Player: We studied in DRMC together.
+	Saad: I see. I heard Modhu talking about them.
+	Saad: Take this locket and tell him I sent you.
+	Saad: He saw them the last time , he is to the north of here.
+	Player: OK sir.Thanks  .
+- I dont want to tell you.
+	Saad: I cannot tell you anything then. 
+=> END
+
+~ Modhu
+Player: Sir, I'm looking for Noor and Nehal.
+Modhu: Why should I tell you about them when i don't know you ?
+if convo=="had":
+	Player: Here, take a look at this locket.
+	Modhu: Ah, I see. I can trust you.
+	Modhu: Noor and Nehal are hiding in a building . They were being chased by the BSL .
+	Modhu: Go and check the Tall Red building east from here. That is where they were seen earlier.
+else 
+	Player: I am their friend.
+	Modhu: I cannot trust your word only.Talk to someone first to confirm your identity.
+=> END 
+
+~ red
+Player: Sir, I was looking for Noor and Nehal.
+Monjur : I saw you at DRMC once, you must be their friend.
+Monjur: Don't worry they are safe. 
+Monjur: Go and find a small building that is in the middle of three small ones and two tall ones. 
+Monjur: They are hiding there.
+Player: I'll hurry and find the building then. 
+
 => END

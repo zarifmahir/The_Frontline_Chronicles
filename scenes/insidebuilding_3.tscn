@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ww40nff1jn74"]
+[gd_scene load_steps=21 format=3 uid="uid://cy6h0gg3i40tc"]
 
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_hce7f"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_nb1m3"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="5_igj53"]
 [ext_resource type="PackedScene" path="res://scenes/scene_trig_3.tscn" id="6_mtbry"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="7_3pfbx"]
+[ext_resource type="PackedScene" uid="uid://8tcacmn7hd8j" path="res://scenes/npc.tscn" id="8_5sbdr"]
+[ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="9_w37js"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8k3s"]
 texture = ExtResource("2_nb1m3")
@@ -721,6 +723,9 @@ b = Vector2(0, -77)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7ykc"]
 size = Vector2(33, 12)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4wuah"]
+radius = 18.1108
+
 [node name="Insidebuilding3" type="Node2D"]
 script = ExtResource("1_hce7f")
 
@@ -785,5 +790,13 @@ connected_scene = "world"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene_trig3"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_q7ykc")
+
+[node name="Noor" parent="." instance=ExtResource("8_5sbdr")]
+position = Vector2(103, 42)
+
+[node name="Actionables" parent="Noor" instance=ExtResource("9_w37js")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Noor/Actionables"]
+shape = SubResource("CircleShape2D_4wuah")
 
 [connection signal="body_entered" from="Scene_trig3" to="Scene_trig3" method="_on_body_entered"]

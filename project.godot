@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Scene_Manager="*res://scripts/scene_manager.gd"
 
+[dialogue_manager]
+
+general/states=["State"]
+
 [display]
 
 window/size/viewport_width=240

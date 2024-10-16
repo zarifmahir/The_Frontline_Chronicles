@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://1brgyjykpk1r"]
+[gd_scene load_steps=17 format=3 uid="uid://cmbektmsw8uk8"]
 
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_6l0uw"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="1_y5tme"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="3_2ovfg"]
-[ext_resource type="PackedScene" uid="uid://t53lbpbapxsb" path="res://scenes/scene_trigger_1.tscn" id="3_8s2lb"]
+[ext_resource type="PackedScene" path="res://scenes/scene_trigger_1.tscn" id="3_8s2lb"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="3_e4f25"]
 [ext_resource type="Texture2D" uid="uid://dhylcprk7oqk6" path="res://assets/Office/Little_Bits_office_objects.png" id="4_7jgbl"]
 
