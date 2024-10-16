@@ -7,7 +7,9 @@ signal healthchanged
 @export var speed=200
 @onready var animations=$AnimationPlayer
 @onready var actionable_finder=$Direction/Actionable_Finder
+@onready var effects = $Effects
 
+@onready var hurttimer = $hurtTimer
 @export var maxHealth = 3
 @onready var currentHealth: int = maxHealth
 
@@ -15,6 +17,9 @@ signal healthchanged
 
 func detective():
 	pass
+
+func _ready() -> void:
+	effects.play("RESET")
 func updateAnimation():
 	if velocity.length()==0:
 		if(animations.is_playing()):
@@ -49,6 +54,10 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 			
 		healthchanged.emit(currentHealth)
 		knockback(area.get_parent().velocity)
+		effects.play("hurtBlink")
+		hurttimer.start()
+		await hurttimer.timeout
+		effects.play("RESET")
 		
 func knockback(enemyVelocity: Vector2):
 	var knockbackdirection = (enemyVelocity-velocity).normalized()*knockbackpower 

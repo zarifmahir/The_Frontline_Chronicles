@@ -1159,8 +1159,6 @@ shape = SubResource("CircleShape2D_otrwe")
 
 [node name="Detective" parent="." instance=ExtResource("4_av7yx")]
 position = Vector2(552, 592)
-collision_layer = 11
-collision_mask = 3
 knockbackpower = 1500
 
 [node name="Followcam" type="Camera2D" parent="Detective"]
@@ -1286,8 +1284,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Enemy1" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("14_5kp7n")]
 y_sort_enabled = true
 position = Vector2(873, 618)
-collision_layer = 2
-collision_mask = 2
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemy1"]
