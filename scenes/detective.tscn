@@ -416,7 +416,6 @@ scale = Vector2(1.63281, 1.32813)
 texture = ExtResource("2_08wgp")
 hframes = 4
 vframes = 7
-frame = 16
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 offset_left = -18.9474

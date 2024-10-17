@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://0ltvyscsg56p"]
+
+[ext_resource type="Script" path="res://scripts/game_completed_scene.gd" id="1_utepj"]
+[ext_resource type="Texture2D" uid="uid://mc0aqs0kathy" path="res://assets/black.png" id="2_nifhk"]
+[ext_resource type="FontFile" uid="uid://rmcty560ykg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_ldx55"]
+[ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="4_rc3gf"]
+[ext_resource type="AudioStream" uid="uid://bodwe6e8wo6tt" path="res://assets/music/2 Minute Timer - Calm Ambient Music.mp3" id="5_7hy7q"]
+[ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="6_he6bb"]
+
+[node name="GameCompletedScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00473, 1.02352)
+script = ExtResource("1_utepj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nifhk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 55
+theme_override_constants/margin_bottom = 55
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 130.383
+offset_top = 159.254
+offset_right = 1033.38
+offset_bottom = 376.254
+theme_override_fonts/font = ExtResource("3_ldx55")
+theme_override_font_sizes/font_size = 18
+text = "                                      END OF GAME!
+
+The hero valiantly sacrifices himself, but his sacrifice
+
+definitely doesn't go to waste!"
+
+[node name="EndGame" type="Button" parent="."]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 517.0
+offset_right = 1090.0
+offset_bottom = 548.0
+theme_override_fonts/font = ExtResource("4_rc3gf")
+text = "Click here to Finish"
+
+[node name="PlayAgain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 98.5339
+offset_top = 519.775
+offset_right = 380.534
+offset_bottom = 550.775
+theme_override_fonts/font = ExtResource("4_rc3gf")
+text = "Play Again "
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7hy7q")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_he6bb")
+volume_db = -15.0
+
+[connection signal="pressed" from="EndGame" to="." method="_on_end_game_pressed"]
+[connection signal="pressed" from="PlayAgain" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]

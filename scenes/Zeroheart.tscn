@@ -56,23 +56,23 @@ text = "                    YOU DIED
 
         Do you want to continue?"
 
-[node name="Button" type="Button" parent="."]
+[node name="No" type="Button" parent="."]
 layout_mode = 0
-offset_left = 685.0
-offset_top = 328.0
-offset_right = 835.0
-offset_bottom = 391.0
+offset_left = 800.0
+offset_top = 352.0
+offset_right = 950.0
+offset_bottom = 415.0
 theme_override_fonts/font = ExtResource("4_xu3wr")
 theme_override_font_sizes/font_size = 20
 text = "No
 "
 
-[node name="Button2" type="Button" parent="."]
+[node name="YEs" type="Button" parent="."]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 329.0
-offset_right = 397.0
-offset_bottom = 399.0
+offset_left = 195.0
+offset_top = 352.0
+offset_right = 412.0
+offset_bottom = 422.0
 theme_override_fonts/font = ExtResource("4_xu3wr")
 theme_override_font_sizes/font_size = 20
 text = "Yes"
@@ -87,5 +87,5 @@ bus = &"Music"
 stream = ExtResource("6_wbwoj")
 volume_db = -15.0
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="No" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="YEs" to="." method="_on_button_2_pressed"]

@@ -1,16 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://do3obs54swib1"]
+[gd_scene load_steps=21 format=3 uid="uid://do3obs54swib1"]
 
 [ext_resource type="Texture2D" uid="uid://dhylcprk7oqk6" path="res://assets/Office/Little_Bits_office_objects.png" id="1_edxii"]
 [ext_resource type="Texture2D" uid="uid://b47kx58b2f8e6" path="res://assets/Office/Little_Bits_office_walls.png" id="2_5vvx6"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="3_4qpsp"]
 [ext_resource type="Texture2D" uid="uid://oa5yxwc3spn3" path="res://assets/Car/car.png" id="4_npf7t"]
-[ext_resource type="PackedScene" path="res://scenes/npc_garage.tscn" id="5_4rubi"]
+[ext_resource type="PackedScene" uid="uid://brlsv61k62lnu" path="res://scenes/npc_garage.tscn" id="5_4rubi"]
 [ext_resource type="Texture2D" uid="uid://mc0aqs0kathy" path="res://assets/black.png" id="5_r2ej4"]
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="6_imwn0"]
 [ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="7_s2cnk"]
 [ext_resource type="PackedScene" uid="uid://b32tcud0upwcu" path="res://scenes/Player_2.tscn" id="8_j2rs7"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trig_3.tscn" id="9_g1war"]
+[ext_resource type="PackedScene" uid="uid://0k4pn7ae40co" path="res://scenes/scene_trig_3.tscn" id="9_g1war"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="10_oom82"]
+[ext_resource type="AudioStream" uid="uid://bmh0poc44jr5b" path="res://assets/music/Clair de Lune (Studio Version).mp3" id="12_fryoo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_615jf"]
 texture = ExtResource("1_edxii")
@@ -402,5 +403,10 @@ connected_scene = "finaltalk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene_trig3"]
 position = Vector2(15.5, -2.5)
 shape = SubResource("RectangleShape2D_j2uuh")
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_fryoo")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="body_entered" from="Scene_trig3" to="Scene_trig3" method="_on_body_entered"]

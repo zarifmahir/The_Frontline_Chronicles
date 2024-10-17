@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dago8jnaqfnom" path="res://scenes/friendlevel2.tscn" id="13_kko8u"]
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="14_a8via"]
 [ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="15_xwfy7"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trig_3.tscn" id="16_vmoh5"]
+[ext_resource type="PackedScene" uid="uid://0k4pn7ae40co" path="res://scenes/scene_trig_3.tscn" id="16_vmoh5"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="17_afu2t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4r5n4"]

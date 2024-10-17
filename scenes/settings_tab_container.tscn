@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://chbp8f7si25e3"]
+[gd_scene load_steps=11 format=3 uid="uid://chbp8f7si25e3"]
 
 [ext_resource type="PackedScene" uid="uid://bah126scf8si8" path="res://scenes/audio_slider_settings.tscn" id="1_xtbk3"]
 [ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="2_iftuf"]
+[ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="3_lk2qu"]
+[ext_resource type="PackedScene" uid="uid://c6mjowo1hdse5" path="res://scenes/Friend.tscn" id="4_7g45i"]
+[ext_resource type="PackedScene" uid="uid://dy7jg8vsv3bqt" path="res://scenes/npc.tscn" id="5_q5q5r"]
+[ext_resource type="PackedScene" uid="uid://b71rq87wiisio" path="res://scenes/enemy_1.tscn" id="6_bkenh"]
+[ext_resource type="PackedScene" uid="uid://db32afdf17acm" path="res://scenes/enemy_2.tscn" id="7_3etkp"]
+[ext_resource type="PackedScene" uid="uid://dvgiff6xh672s" path="res://scenes/enemy_3.tscn" id="8_21254"]
+[ext_resource type="PackedScene" uid="uid://b4wit11oooo6r" path="res://scenes/enemy_4.tscn" id="9_qg61f"]
+[ext_resource type="FontFile" uid="uid://rmcty560ykg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="10_iba5i"]
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -25,9 +33,10 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -87,24 +96,34 @@ alignment = 1
 [node name="Label" type="Label" parent="TabContainer/Instructions/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_iftuf")
-text = "Puzzle mystery game themed around the quota reform movement!
+text = "Action-packed Puzzle Mystery game themed 
+around a boy navigating a tumultuous city, 
+rescuing friends and allies amidst widespread 
+opposition.
 
 
-Use Arrow Keys to move. 
-Talk to the characters, 
-and try to make it to the end!
+Use W-A-S-D Keys to move.
+
+Start interacting with the Z key;
+(Make sure to Press Z once or you might get stuck in an endless loop, 
+just keep left clicking until you're out!)
+
+Press Space or Left Click to continue conversing.
+
+Fight enemies with J.
+
+Navigate your way around the map and rescue your allies!
 
 
 Enjoy < 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
+[node name="Characters" type="TabBar" parent="TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Characters"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,27 +135,132 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Characters/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
+[node name="Detective" parent="TabContainer/Characters/MarginContainer/VBoxContainer" instance=ExtResource("3_lk2qu")]
+position = Vector2(114, 86)
+scale = Vector2(3, 3)
+script = null
 
-[node name="Label2" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
+[node name="Friend" parent="TabContainer/Characters/MarginContainer/VBoxContainer" instance=ExtResource("4_7g45i")]
+position = Vector2(112, 242)
+scale = Vector2(3, 3)
+script = null
 
-[node name="Label3" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
+[node name="CharacterBody2D" parent="TabContainer/Characters/MarginContainer/VBoxContainer" instance=ExtResource("5_q5q5r")]
+position = Vector2(108, 364)
+scale = Vector2(3, 3)
+script = null
 
-[node name="Label4" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
+[node name="Enemy1" parent="TabContainer/Characters/MarginContainer/VBoxContainer" instance=ExtResource("6_bkenh")]
+position = Vector2(655, 53)
+scale = Vector2(3, 3)
+script = null
 
-[node name="Label5" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "123123"
+[node name="Enemy2" parent="TabContainer/Characters/MarginContainer/VBoxContainer" instance=ExtResource("7_3etkp")]
+position = Vector2(760, 60)
+scale = Vector2(3, 3)
+script = null
+
+[node name="Enemy3" parent="TabContainer/Characters/MarginContainer" instance=ExtResource("8_21254")]
+position = Vector2(682, 198)
+scale = Vector2(3, 3)
+script = null
+
+[node name="Enemy4" parent="TabContainer/Characters/MarginContainer" instance=ExtResource("9_qg61f")]
+position = Vector2(795, 197)
+scale = Vector2(3, 3)
+script = null
+
+[node name="Student" type="Label" parent="TabContainer/Characters"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 66.0
+offset_right = 484.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("10_iba5i")
+theme_override_font_sizes/font_size = 14
+text = "Protagonist Student"
+
+[node name="Friend" type="Label" parent="TabContainer/Characters"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 199.0
+offset_right = 488.0
+offset_bottom = 222.0
+theme_override_fonts/font = ExtResource("10_iba5i")
+theme_override_font_sizes/font_size = 14
+text = "Protagonist's Friend"
+
+[node name="NPC" type="Label" parent="TabContainer/Characters"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 359.0
+offset_right = 489.0
+offset_bottom = 382.0
+theme_override_fonts/font = ExtResource("10_iba5i")
+theme_override_font_sizes/font_size = 14
+text = "NPC"
+
+[node name="Enemies" type="Label" parent="TabContainer/Characters"]
+layout_mode = 0
+offset_left = 699.0
+offset_top = 295.0
+offset_right = 948.0
+offset_bottom = 318.0
+theme_override_fonts/font = ExtResource("10_iba5i")
+theme_override_font_sizes/font_size = 14
+text = "Enemies
+"
+
+[node name="stdesc" type="Label" parent="TabContainer/Characters"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 89.0
+offset_right = 557.0
+offset_bottom = 190.0
+theme_override_fonts/font = ExtResource("2_iftuf")
+theme_override_font_sizes/font_size = 10
+text = "Main character on a mission to 
+save his friends while navigating 
+the tumultuous city being ravaged 
+by BSL savages"
+
+[node name="npcdesc" type="Label" parent="TabContainer/Characters"]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 384.0
+offset_right = 561.0
+offset_bottom = 485.0
+theme_override_fonts/font = ExtResource("2_iftuf")
+theme_override_font_sizes/font_size = 10
+text = "Characters scattered throughout
+the levels that will guide you"
+
+[node name="enemydesc" type="Label" parent="TabContainer/Characters"]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 319.0
+offset_right = 916.0
+offset_bottom = 420.0
+theme_override_fonts/font = ExtResource("2_iftuf")
+theme_override_font_sizes/font_size = 10
+text = "Nasty BSL Hooligans. You are equipped with
+a sword at all times. Try to avoid getting
+hit by them and Press J to swing your 
+sword at them"
+
+[node name="frienddesc" type="Label" parent="TabContainer/Characters"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 225.0
+offset_right = 559.0
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("2_iftuf")
+theme_override_font_sizes/font_size = 10
+text = "Protagonists friend who is on the run
+as he was chased off by goons and 
+BSL thugs"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cc3kbw1djw6np"]
+[gd_scene load_steps=24 format=3 uid="uid://cc3kbw1djw6np"]
 
 [ext_resource type="Script" path="res://scripts/station_2.gd" id="1_1gdqj"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="2_hmkm4"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dwapuc0x2yda6" path="res://scenes/hearts_container2.tscn" id="12_3xa6g"]
 [ext_resource type="PackedScene" uid="uid://dtrcmnumhuetd" path="res://scenes/scene_trig_4.tscn" id="13_npaxf"]
 [ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="14_jodp8"]
+[ext_resource type="AudioStream" uid="uid://b46q0rd5tl6h5" path="res://assets/music/calm_game_music_1-49209.mp3" id="15_ro223"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4r5n4"]
 texture = ExtResource("2_hmkm4")
@@ -1621,3 +1622,8 @@ shape = SubResource("RectangleShape2D_h55v8")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_jodp8")
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_ro223")
+volume_db = -15.0
+autoplay = true

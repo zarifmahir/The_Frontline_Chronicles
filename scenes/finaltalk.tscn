@@ -43,14 +43,26 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 130.383
-offset_top = 159.254
-offset_right = 1008.38
-offset_bottom = 376.254
+offset_left = 94.5528
+offset_top = 109.426
+offset_right = 2281.55
+offset_bottom = 414.426
 theme_override_fonts/font = ExtResource("3_q1du5")
-theme_override_font_sizes/font_size = 18
-text = "                         xyz
-"
+theme_override_font_sizes/font_size = 16
+text = "As the hero repelled the approaching enemy, 
+
+Nehal fled the base with the vehicle. Despite Nehal's survival, 
+
+the hero was unable to arrive. The hero was defeated by the BSL thugs.
+
+
+
+Protests grew after Nehal informed the world about the hero. 
+
+The people's will prevailed against the goons. They fled. 
+
+
+Present scene -> At the funeral of the hero"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -59,7 +71,7 @@ offset_top = 517.0
 offset_right = 1090.0
 offset_bottom = 548.0
 theme_override_fonts/font = ExtResource("4_nf1pn")
-text = "Click here to Continue"
+text = "Proceed to End Scene"
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_l55wa")

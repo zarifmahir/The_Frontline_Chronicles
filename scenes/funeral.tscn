@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ccl3rdpuldu7u"]
+[gd_scene load_steps=20 format=3 uid="uid://ccl3rdpuldu7u"]
 
 [ext_resource type="Texture2D" uid="uid://bx66erj1larld" path="res://assets/Player/CP_V1.0.4.png" id="1_fa3aa"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="2_gs24q"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="7_rc5ht"]
 [ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="8_3bpxv"]
 [ext_resource type="PackedScene" uid="uid://b32tcud0upwcu" path="res://scenes/Player_2.tscn" id="10_ew35q"]
+[ext_resource type="AudioStream" uid="uid://dxkbtgs7tvyqu" path="res://assets/music/Debussy_ Rêverie.mp3" id="11_x5k23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17weh"]
 texture = ExtResource("1_fa3aa")
@@ -1043,3 +1044,8 @@ position = Vector2(578, 72)
 scale = Vector2(4.5, 4.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player2"]
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_x5k23")
+volume_db = -15.0
+autoplay = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxkbtgs7tvyqu"
+path="res://.godot/imported/Debussy_ Rêverie.mp3-75ba7264b8d7f9b6bfb2db4b427deb12.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Debussy_ Rêverie.mp3"
+dest_files=["res://.godot/imported/Debussy_ Rêverie.mp3-75ba7264b8d7f9b6bfb2db4b427deb12.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
