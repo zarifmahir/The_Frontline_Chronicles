@@ -1,16 +1,17 @@
-[gd_scene load_steps=23 format=3 uid="uid://cy6h0gg3i40tc"]
+[gd_scene load_steps=25 format=3 uid="uid://cy6h0gg3i40tc"]
 
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_hce7f"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_nb1m3"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="3_vkfqe"]
 [ext_resource type="Texture2D" uid="uid://dhylcprk7oqk6" path="res://assets/Office/Little_Bits_office_objects.png" id="4_5ku38"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="5_igj53"]
-[ext_resource type="PackedScene" uid="uid://0k4pn7ae40co" path="res://scenes/scene_trig_3.tscn" id="6_mtbry"]
+[ext_resource type="PackedScene" path="res://scenes/scene_trig_3.tscn" id="6_mtbry"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="7_3pfbx"]
-[ext_resource type="PackedScene" uid="uid://8tcacmn7hd8j" path="res://scenes/npc.tscn" id="8_5sbdr"]
+[ext_resource type="PackedScene" uid="uid://dy7jg8vsv3bqt" path="res://scenes/npc.tscn" id="8_5sbdr"]
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="9_w37js"]
 [ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="10_3svvk"]
 [ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="10_rg6yc"]
+[ext_resource type="PackedScene" uid="uid://t53lbpbapxsb" path="res://scenes/scene_trigger_1.tscn" id="12_nk8ks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8k3s"]
 texture = ExtResource("2_nb1m3")
@@ -678,8 +679,9 @@ texture = ExtResource("4_5ku38")
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
 6:3/0 = 0
+8:3/size_in_atlas = Vector2i(2, 3)
 8:3/0 = 0
-9:3/0 = 0
+8:3/0/texture_origin = Vector2i(0, 8)
 10:3/0 = 0
 1:4/0 = 0
 3:4/size_in_atlas = Vector2i(1, 2)
@@ -692,13 +694,9 @@ texture = ExtResource("4_5ku38")
 6:4/0 = 0
 6:4/0/texture_origin = Vector2i(-6, 0)
 6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -5.125, -4.5625, -9.1875, 6, -9.3125, 16.6875, -9.6875, 16.6875, -7.625, 17.8125, -5.4375, 19, -1.3125, 18.75, 7.6875, 16.5, 8.375, 15.3125, 1.4375, -4.125, -0.375, -4.25, 8.8125, -6.375, 8)
-8:4/0 = 0
-9:4/0 = 0
 1:5/0 = 0
 4:5/0 = 0
 5:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_6fktk"]
 physics_layer_0/collision_layer = 1
@@ -728,6 +726,9 @@ size = Vector2(33, 12)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4wuah"]
 radius = 18.1108
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq3lx"]
+size = Vector2(30, 20)
+
 [node name="Insidebuilding3" type="Node2D"]
 script = ExtResource("1_hce7f")
 
@@ -736,7 +737,7 @@ tile_set = SubResource("TileSet_6fktk")
 format = 2
 layer_0/tile_data = PackedInt32Array(131073, 1376256, 40, 196609, 1376256, 40, 262145, 1376256, 40, 327681, 1376256, 40, 393217, 1376256, 40, 458753, 1114112, 44, 131074, 1376256, 40, 196610, 1376256, 40, 262146, 1376256, 40, 327682, 1376256, 40, 393218, 1376256, 40, 458754, 1114112, 44, 131075, 1376256, 40, 196611, 1376256, 40, 262147, 1376256, 40, 327683, 1376256, 40, 393219, 1376256, 40, 458755, 1114112, 44, 131076, 524289, 1, 196612, 524289, 1, 262148, 1376256, 40, 327684, 1376256, 40, 393220, 1376256, 40, 458756, 1114112, 44, 131077, 524289, 1, 196613, 524289, 1, 262149, 1376256, 40, 327685, 1376256, 40, 393221, 1376256, 40, 458757, 1114112, 44, 131078, 524289, 1, 196614, 524289, 1, 262150, 1376256, 40, 327686, 1376256, 40, 393222, 1376256, 40, 131079, 524289, 1, 196615, 524289, 1, 262151, 1376256, 40, 327687, 1376256, 40, 393223, 1376256, 40, 131080, 524289, 1, 196616, 524289, 1, 262152, 1376256, 40, 327688, 1376256, 40, 393224, 1376256, 40, 458760, 1114112, 44, 131081, 1376256, 40, 196617, 1376256, 40, 262153, 1376256, 40, 327689, 1376256, 40, 393225, 1376256, 40, 458761, 1114112, 44, 131082, 1376256, 40, 196618, 1376256, 40, 262154, 1376256, 40, 327690, 1376256, 40, 393226, 1376256, 40, 458762, 1114112, 44, 131083, 1376256, 40, 196619, 1376256, 40, 262155, 1376256, 40, 327691, 1376256, 40, 393227, 1376256, 40, 458763, 1114112, 44, 131084, 1376256, 40, 196620, 1376256, 40, 262156, 1376256, 40, 327692, 1376256, 40, 393228, 1376256, 40, 458764, 1114112, 44, 65536, 1376256, 40, 131072, 1376256, 40, 196608, 1376256, 40, 262144, 1376256, 40, 327680, 1376256, 40, 393216, 1376256, 40, 458752, 1114112, 44, 65537, 1376256, 40, 65538, 1376256, 40, 65539, 1376256, 40, 65540, 524289, 1, 65541, 524289, 1, 65542, 524289, 1, 458758, 1376256, 40, 65543, 524289, 1, 458759, 1376256, 40, 65544, 524289, 1, 65545, 1376256, 40, 65546, 1376256, 40, 65547, 1376256, 40, 65548, 1376256, 40, 131085, 1376256, 40, 196621, 1376256, 40, 262157, 1376256, 40, 327693, 1376256, 40, 393229, 1376256, 40, 65549, 1376256, 40, 458765, 1114112, 44, -196608, 1114112, 38, -196607, 1114112, 38, -196606, 1114112, 38, -196605, 1114112, 38, -196604, 1114112, 38, -196603, 1114112, 38, -196602, 1114112, 38, -196601, 1114112, 38, -196600, 1114112, 38, -196599, 1114112, 38, -196598, 1114112, 38, -196597, 1114112, 38, -196596, 1114112, 38, -196595, 1114112, 38, -131072, 1376256, 40, -131071, 1376256, 40, -131070, 1376256, 40, -131069, 1376256, 40, -131068, 1376256, 40, -131067, 1376256, 40, -131066, 1376256, 40, -131065, 1376256, 40, -131064, 1376256, 40, -131063, 1376256, 40, -131062, 1376256, 40, -131061, 1376256, 40, -131060, 1376256, 40, -131059, 1376256, 40, -65536, 1376256, 40, -65535, 1376256, 40, -65534, 1376256, 40, -65533, 1376256, 40, -65532, 1376256, 40, -65531, 1376256, 40, -65530, 1376256, 40, -65529, 1376256, 40, -65528, 1376256, 40, -65527, 1376256, 40, -65526, 1376256, 40, -65525, 1376256, 40, -65524, 1376256, 40, -65523, 1376256, 40, 0, 1376256, 40, 1, 1376256, 40, 2, 1376256, 40, 3, 1376256, 40, 4, 1376256, 40, 5, 1376256, 40, 6, 1376256, 40, 7, 1376256, 40, 8, 1376256, 40, 9, 1376256, 40, 10, 1376256, 40, 11, 1376256, 40, 12, 1376256, 40, 13, 1376256, 40, -131073, 851968, 38, -65537, 851968, 40, -1, 851968, 40, 65535, 851968, 40, 131071, 851968, 40, 196607, 851968, 40, 262143, 851968, 40, 327679, 851968, 40, 393215, 851968, 40, 458751, 851968, 40, 524287, 851968, 44, -196594, 1245184, 38, -131058, 1245184, 40, -65522, 1245184, 40, 14, 1245184, 40, 65550, 1245184, 40, 131086, 1245184, 40, 196622, 1245184, 40, 262158, 1245184, 40, 327694, 1245184, 40, 393230, 1245184, 40, 458766, 1245184, 44)
 layer_1/name = "objects"
-layer_1/tile_data = PackedInt32Array(-131072, 196610, 3, -65523, 196610, 4, 65536, 393218, 4, 327680, 196610, 3, 393229, 196610, 3, 196621, 196610, 3, -131070, 65538, 3, -131061, 131074, 3)
+layer_1/tile_data = PackedInt32Array(-131072, 196610, 3, -65523, 196610, 4, 65536, 393218, 4, 327680, 196610, 3, 393229, 196610, 3, 196621, 196610, 3, -131070, 65538, 3, -131061, 131074, 3, -65530, 524290, 3)
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
@@ -805,5 +806,12 @@ shape = SubResource("CircleShape2D_4wuah")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_rg6yc")
+
+[node name="SceneTrigger1" parent="." instance=ExtResource("12_nk8ks")]
+position = Vector2(104, -17)
+connected_scene = "level_1_to_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger1"]
+shape = SubResource("RectangleShape2D_dq3lx")
 
 [connection signal="body_entered" from="Scene_trig3" to="Scene_trig3" method="_on_body_entered"]

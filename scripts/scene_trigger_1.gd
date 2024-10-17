@@ -8,4 +8,5 @@ func _on_body_entered(body: Node2D) -> void:
 	#get_tree().call_deferred("change_scene_to_file", full_path)
 	if body is Detect:
 		Scene_Manager.change_scene(get_owner(), connected_scene)
-	
+	elif body is Detect2:
+		get_tree().call_deferred("change_scene_to_file", full_path)

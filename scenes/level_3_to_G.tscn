@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://010lecmxv2po"]
+
+[ext_resource type="Script" path="res://scripts/level_3_to_g.gd" id="1_21yiv"]
+[ext_resource type="Texture2D" uid="uid://mc0aqs0kathy" path="res://assets/black.png" id="2_ib4wv"]
+[ext_resource type="FontFile" uid="uid://rmcty560ykg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_omx1r"]
+[ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="4_xkuxt"]
+[ext_resource type="AudioStream" uid="uid://bodwe6e8wo6tt" path="res://assets/music/2 Minute Timer - Calm Ambient Music.mp3" id="5_32ath"]
+[ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="6_p4x6i"]
+
+[node name="level_3_to_G" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00473, 1.02352)
+script = ExtResource("1_21yiv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ib4wv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 55
+theme_override_constants/margin_bottom = 55
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 130.383
+offset_top = 159.254
+offset_right = 1008.38
+offset_bottom = 376.254
+theme_override_fonts/font = ExtResource("3_omx1r")
+theme_override_font_sizes/font_size = 18
+text = "                                   End of Level Three
+
+
+
+You and Nehal have escaped the base, but the goons are 
+
+following you both. A hard decision has to be taken.
+
+
+--> You now control Nehal
+
+--> Talk to hero for further directives"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 517.0
+offset_right = 1090.0
+offset_bottom = 548.0
+theme_override_fonts/font = ExtResource("4_xkuxt")
+text = "Click here to Continue"
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_32ath")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_p4x6i")
+volume_db = -15.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://2wketmy6oakw"]
+
+[ext_resource type="Texture2D" uid="uid://mc0aqs0kathy" path="res://assets/black.png" id="1_kiidq"]
+[ext_resource type="Script" path="res://scripts/level_2_to_3.gd" id="1_odgwd"]
+[ext_resource type="FontFile" uid="uid://rmcty560ykg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_1qv48"]
+[ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="3_48fej"]
+[ext_resource type="AudioStream" uid="uid://bodwe6e8wo6tt" path="res://assets/music/2 Minute Timer - Calm Ambient Music.mp3" id="4_gdi41"]
+[ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="6_l6vwu"]
+
+[node name="Level2to3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00473, 1.02352)
+script = ExtResource("1_odgwd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kiidq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 55
+theme_override_constants/margin_bottom = 55
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 130.383
+offset_top = 159.254
+offset_right = 1008.38
+offset_bottom = 376.254
+theme_override_fonts/font = ExtResource("2_1qv48")
+theme_override_font_sizes/font_size = 18
+text = "                                   End of Level Two
+
+               Tantalizingly close, but still distant.
+
+
+--> Escape the BSL base with your friend
+
+--> Stay close to your friend or else he can't follow you
+
+--> The exit is purple in color like the entrance
+"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 517.0
+offset_right = 1090.0
+offset_bottom = 548.0
+theme_override_fonts/font = ExtResource("3_48fej")
+text = "Click here to Continue"
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gdi41")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_l6vwu")
+volume_db = -15.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

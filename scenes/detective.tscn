@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://ueue47hblxg4"]
+[gd_scene load_steps=22 format=3 uid="uid://ueue47hblxg4"]
 
 [ext_resource type="Script" path="res://scripts/detective.gd" id="1_rc8jv"]
 [ext_resource type="Texture2D" uid="uid://d2jrs2yrmjqdw" path="res://assets/Player/boy.png" id="2_08wgp"]
 [ext_resource type="PackedScene" uid="uid://d2occwsvcuclb" path="res://scenes/sword.tscn" id="3_2ah86"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="3_nhops"]
+[ext_resource type="AudioStream" uid="uid://d4ac5kf0wppe6" path="res://assets/music/sword-stab-push-melee-weapon-236206.mp3" id="5_j4t3o"]
 
 [sub_resource type="Animation" id="Animation_ugdl7"]
 resource_name = "AttackDown"
@@ -465,5 +466,9 @@ script = ExtResource("3_nhops")
 
 [node name="Sword" parent="weapon" instance=ExtResource("3_2ah86")]
 position = Vector2(0.845262, -0.534352)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_j4t3o")
+volume_db = -10.0
 
 [connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]

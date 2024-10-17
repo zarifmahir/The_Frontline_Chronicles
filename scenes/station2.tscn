@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cc3kbw1djw6np"]
+[gd_scene load_steps=23 format=3 uid="uid://cc3kbw1djw6np"]
 
 [ext_resource type="Script" path="res://scripts/station_2.gd" id="1_1gdqj"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="2_hmkm4"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dvgiff6xh672s" path="res://scenes/enemy_3.tscn" id="10_36jkr"]
 [ext_resource type="PackedScene" uid="uid://c6mjowo1hdse5" path="res://scenes/Friend.tscn" id="11_ojriq"]
 [ext_resource type="PackedScene" uid="uid://dwapuc0x2yda6" path="res://scenes/hearts_container2.tscn" id="12_3xa6g"]
+[ext_resource type="PackedScene" uid="uid://dtrcmnumhuetd" path="res://scenes/scene_trig_4.tscn" id="13_npaxf"]
+[ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="14_jodp8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4r5n4"]
 texture = ExtResource("2_hmkm4")
@@ -1530,6 +1532,9 @@ sources/3 = SubResource("TileSetAtlasSource_n0y7r")
 sources/5 = SubResource("TileSetAtlasSource_llky0")
 sources/6 = SubResource("TileSetAtlasSource_m3eo8")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h55v8"]
+size = Vector2(76, 77)
+
 [node name="Station2" type="Node2D"]
 script = ExtResource("1_1gdqj")
 
@@ -1547,6 +1552,7 @@ layer_3/name = "Tables and stuff"
 layer_3/tile_data = PackedInt32Array(393314, 131073, 2, 10027177, 655360, 0, 10092713, 655360, 0, 10158249, 655360, 0, 10223785, 655360, 0, 10289321, 655360, 0, 10027178, 655360, 0, 10092714, 655360, 0, 10158250, 655360, 0, 10223786, 655360, 0, 10289322, 655360, 0, 10027179, 655360, 0, 10092715, 655360, 0, 10158251, 655360, 0, 10223787, 655360, 0, 10289323, 655360, 0, 10027180, 655360, 0, 10092716, 655360, 0, 10158252, 655360, 0, 10223788, 655360, 0, 10289324, 655360, 0, 786457, 655360, 0, 851993, 655360, 0, 917529, 655360, 0, 983065, 655360, 0, 1048601, 655360, 0, 1114137, 655360, 0, 786458, 655360, 0, 851994, 655360, 0, 917530, 655360, 0, 983066, 655360, 0, 1048602, 655360, 0, 1114138, 655360, 0, 786459, 655360, 0, 851995, 655360, 0, 917531, 655360, 0, 983067, 655360, 0, 1048603, 655360, 0, 1114139, 655360, 0, 786460, 655360, 0, 851996, 655360, 0, 917532, 655360, 0, 983068, 655360, 0, 1048604, 655360, 0, 1114140, 655360, 0, 10354857, 393218, 0, 10354859, 393218, 0, 9961640, 393218, 0, 9961642, 393218, 0, 9961643, 393218, 0, 9961644, 393218, 0, 10354860, 393218, 0, 10354855, 393218, 0, 9961639, 393218, 0, 720921, 393218, 0, 720922, 393218, 0, 720924, 393218, 0, 1179673, 393218, 0, 1179675, 393218, 0, 1179676, 393218, 0, 720926, 393218, 0, 1179678, 393218, 0)
 
 [node name="Detective" parent="." instance=ExtResource("6_lu5b5")]
+z_index = 1
 position = Vector2(521, 250)
 scale = Vector2(2, 2)
 speed = 450
@@ -1604,3 +1610,14 @@ scale = Vector2(3, 3)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("12_3xa6g")]
+
+[node name="Scene_trig4" parent="." instance=ExtResource("13_npaxf")]
+position = Vector2(2736, 2494)
+connected_scene = "level_3_to_G"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene_trig4"]
+position = Vector2(-3, -7.5)
+shape = SubResource("RectangleShape2D_h55v8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_jodp8")

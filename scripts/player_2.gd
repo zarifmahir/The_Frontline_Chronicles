@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-class_name Detect
+class_name Detect2
 
 signal healthchanged
 
@@ -9,7 +9,7 @@ signal healthchanged
 @onready var actionable_finder=$Direction/Actionable_Finder
 @onready var effects = $Effects
 
-@onready var swordsound = $AudioStreamPlayer2D
+
 @onready var hurtBox = $hurtBox
 
 @onready var hurttimer = $hurtTimer
@@ -17,7 +17,7 @@ signal healthchanged
 @onready var currentHealth: int = maxHealth
 
 
-@onready var weapon = $weapon
+
 @export var knockbackpower: int =900
 
 
@@ -33,7 +33,7 @@ func detective():
 func _ready() -> void:
 	direction = "idle"
 	effects.play("RESET")
-	weapon.disable()
+
 	
 func updateAnimation():
 	if isAttacking: return
@@ -69,10 +69,10 @@ func handleInput():
 func attac():
 	animations.play("Attack"+lastAnimeDirection)
 	isAttacking = true
-	weapon.enable()
-	swordsound.play(0)
+	
+
 	await animations.animation_finished
-	weapon.disable()
+
 	animations.play("walk"+lastAnimeDirection)
 	isAttacking = false
 	

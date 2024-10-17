@@ -95,3 +95,10 @@ Nehal: For hundreds of sacrifices like yours we are where we are now.
 Nehal: Your legacy will live on forever.
 Game: Go to your right and complete the game.
 => END
+
+~ station
+Player: I finally found you! Thank god, you are safe!!
+Nehal: I am so relieved to see you.
+Player: Don't worry. Let's escape from here.
+Nehal: Let's go before they catch us.
+=> END

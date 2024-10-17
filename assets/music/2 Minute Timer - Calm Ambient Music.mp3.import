@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bodwe6e8wo6tt"
+path="res://.godot/imported/2 Minute Timer - Calm Ambient Music.mp3-b7feaa8c45a7fc0dde9a540dad88bdf2.mp3str"
+
+[deps]
+
+source_file="res://assets/music/2 Minute Timer - Calm Ambient Music.mp3"
+dest_files=["res://.godot/imported/2 Minute Timer - Calm Ambient Music.mp3-b7feaa8c45a7fc0dde9a540dad88bdf2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

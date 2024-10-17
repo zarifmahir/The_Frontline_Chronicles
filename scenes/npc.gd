@@ -22,7 +22,7 @@ func _ready():
 	start_pos=position
 func _process(delta: float) -> void:
 	if current_state==0 or current_state==1 :
-		$AnimatedSprite2D.play("idle")
+		pass#$AnimatedSprite2D.play("idle")
 	elif current_state==2 and !is_chatting:
 		if dir.x==-1:
 			$AnimatedSprite2D.play("walkLeft")
