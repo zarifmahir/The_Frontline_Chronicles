@@ -142,8 +142,8 @@ radius = 4.0
 height = 8.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fcro4"]
-radius = 60.0
-height = 120.0
+radius = 115.0
+height = 230.0
 
 [node name="Friend" type="CharacterBody2D"]
 script = ExtResource("1_yqh6c")

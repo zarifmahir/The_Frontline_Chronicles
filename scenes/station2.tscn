@@ -1605,7 +1605,7 @@ position = Vector2(2074, 2430)
 scale = Vector2(2, 2)
 
 [node name="Friend" parent="." instance=ExtResource("11_ojriq")]
-position = Vector2(904, 165)
+position = Vector2(949, 173)
 scale = Vector2(3, 3)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

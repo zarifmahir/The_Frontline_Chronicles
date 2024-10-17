@@ -10,12 +10,14 @@ signal healthchanged
 @onready var effects = $Effects
 
 @onready var swordsound = $AudioStreamPlayer2D
+@onready var chatclick = $chatclick
 @onready var hurtBox = $hurtBox
 
 @onready var hurttimer = $hurtTimer
 @export var maxHealth = 3
 @onready var currentHealth: int = maxHealth
 
+@onready var chatttimer = $chatTimer
 
 @onready var weapon = $weapon
 @export var knockbackpower: int =900
@@ -26,6 +28,7 @@ var direction2
 var lastAnimeDirection: String = "Down"
 var ishurt: bool = false
 var isAttacking: bool = false
+var can_do_action: bool = true
 var noheart: String = "Zeroheart"
 func detective():
 	pass
@@ -54,10 +57,13 @@ func updateAnimation():
 		
 func handleInput():
 	
-	if Input.is_action_just_pressed("Chat"):
+	if Input.is_action_just_pressed("Chat") and can_do_action:
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size()>0:
+			chatclick.play(0)
 			actionables[0].action()
+			can_do_action = false
+			chatttimer.start()
 			return
 	
 	var moveDirection=Input.get_vector("a","d","w","s")
@@ -104,3 +110,7 @@ func knockback(enemyVelocity: Vector2):
 	var knockbackdirection = (enemyVelocity-velocity).normalized()*knockbackpower 
 	velocity = knockbackdirection
 	move_and_slide()
+
+
+func _on_chat_timer_timeout() -> void:
+	can_do_action = true

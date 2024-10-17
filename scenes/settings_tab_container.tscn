@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://chbp8f7si25e3"]
 
-[ext_resource type="PackedScene" uid="uid://bah126scf8si8" path="res://scenes/audio_slider_settings.tscn" id="1_xtbk3"]
+[ext_resource type="PackedScene" path="res://scenes/audio_slider_settings.tscn" id="1_xtbk3"]
 [ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="2_iftuf"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="3_lk2qu"]
 [ext_resource type="PackedScene" uid="uid://c6mjowo1hdse5" path="res://scenes/Friend.tscn" id="4_7g45i"]
@@ -33,7 +33,7 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 2
+current_tab = 1
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
 visible = false
@@ -72,7 +72,6 @@ layout_mode = 2
 bus_name = "SFX"
 
 [node name="Instructions" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -105,10 +104,15 @@ opposition.
 Use W-A-S-D Keys to move.
 
 Start interacting with the Z key;
-(Make sure to Press Z once or you might get stuck in an endless loop, 
-just keep left clicking until you're out!)
 
 Press Space or Left Click to continue conversing.
+
+(N.B. There’s a unique feature that we’d like to point out
+ to ease your gameplay experience. When you interact with 
+the NPCs, make sure to press Z only once! Otherwise, the
+entire conversation might loop as many times as you
+ have pressed Z. If you ever fall into the loop,
+ that’s a skill issue! So just don’t! :>)
 
 Fight enemies with J.
 
@@ -120,6 +124,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Characters" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

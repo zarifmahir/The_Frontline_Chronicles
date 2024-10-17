@@ -1,7 +1,7 @@
 extends BaseScene
 
 #@onready var pause_menu: Control = $PauseMenu
-@onready var heartsContainer = $CanvasLayer/HeartsContainer
+@onready var heartsContainer = $CanvasLayer2/HeartsContainer
 var paused = false
 #@onready var camera = $Followcam
 # Called when the node enters the scene tree for the first time.

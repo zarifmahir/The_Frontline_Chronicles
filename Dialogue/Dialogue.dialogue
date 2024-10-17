@@ -30,16 +30,17 @@ Saad: Once you find their identity , Go to the red tall building located at the 
 
 ~ knight
 Rahim : My name is Rahim.
-Rahim: Karim (to the south of here) is not a knight.
+Rahim: Karim (to the south of here) is a knight.
 
 => END 
 
 ~ knave
 Karim : My name is Karim
-Karim: Rahim (to the north) is a knight
+Karim: Rahim (to the north) and me(Karim) are of opposite types
 => END 
 ~ red
 Wahab: Hello there.
+
 
 if convo =="had"
 	Wahab: They are located at the only green building in the lane just to the south of here.
@@ -51,17 +52,17 @@ else:
 	Wahab: Their friend is indeed smart.
 	Wahab: Who is the knight and knave?
 	- Rahim is Knight and Karim is Knave
-		set convo="had"
-		Wahab: You are correct.
-		Wahab: I believe that you are their friend.
-		Wahab: They are located at the only green building in the lane just to the south of here.
-		Wahab: There is a building called shop to its left also.
+		Wahab: You are incorrect. 
 	- Rahim is Knave and Karim is Knight.
 		Wahab: You are incorrect. 
 	- Both are Knights
 		Wahab: You are incorrect. 
 	- Both are Knaves
-		Wahab: You are incorrect. 
+		set convo="had"
+		Wahab: You are correct.
+		Wahab: I believe that you are their friend.
+		Wahab: They are located at the only green building in the lane just to the south of here.
+		Wahab: There is a building called shop to its left also.
 => END 
 
 ~ level

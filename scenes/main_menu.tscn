@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bj1hurgj5qadx"]
 
-[ext_resource type="Texture2D" uid="uid://f228hoqsy4ka" path="res://assets/Background/Bangladesh.png" id="1_8d20d"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jp1uc"]
 [ext_resource type="FontFile" uid="uid://rmcty560ykg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_3vraf"]
+[ext_resource type="Texture2D" uid="uid://bd1ktikocl644" path="res://assets/GOMt-cIWIAA72ZT.png" id="2_c30wa"]
 [ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="3_fs3u4"]
-[ext_resource type="PackedScene" uid="uid://d4kec34vycma4" path="res://scenes/options_menu.tscn" id="5_to4aj"]
+[ext_resource type="PackedScene" uid="uid://cbmmicgfwe2yx" path="res://scenes/options_menu.tscn" id="5_to4aj"]
 [ext_resource type="AudioStream" uid="uid://5son23tb41je" path="res://assets/music/Dark Fantasy Tiktok Song (slowed  reverb) Yamaha - Dorian concept.mp3" id="6_1eyy0"]
 
 [node name="Main_Menu" type="Control"]
@@ -28,7 +28,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.901044, 0.994954)
-texture = ExtResource("1_8d20d")
+texture = ExtResource("2_c30wa")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
