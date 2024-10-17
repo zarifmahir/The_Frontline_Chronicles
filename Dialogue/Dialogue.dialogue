@@ -77,3 +77,21 @@ Noor: I know where they are. Go to the gate behind me and prepare yourself.
 ~ chunu
 Zarif: What's going on in our nation? I'm so scared .
 => END
+
+~ garage
+Player: You must quickly enter the car. We don't have time to waste
+Nehal: I won't leave you behind.
+Player: I will hold them here and join you later on.
+Player: Your brother Noor is waiting for you.
+Player: Go now Nehal.
+Nehal: Make it out safe for us.We'll be waiting for you. 
+
+=> END 
+
+~ grave 
+Nehal: My brother, you sacrificed yourself to save me.
+Nehal: Your sacrifice didn't go to waste.
+Nehal: For hundreds of sacrifices like yours we are where we are now.
+Nehal: Your legacy will live on forever.
+Game: Go to your right and complete the game.
+=> END

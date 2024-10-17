@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://brlsv61k62lnu"]
+
+[ext_resource type="Script" path="res://scenes/npc.gd" id="1_ivxkt"]
+[ext_resource type="Texture2D" uid="uid://d2jrs2yrmjqdw" path="res://assets/Player/boy.png" id="2_ko6nt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhytr"]
+atlas = ExtResource("2_ko6nt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ce8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhytr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_by7f5"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ivxkt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4ce8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_by7f5")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
