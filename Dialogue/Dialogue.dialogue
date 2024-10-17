@@ -1,11 +1,18 @@
 #The one at the beginning of map
 ~ Start
-Abid: I heard  Noor and his brother Nehal are in grave danger.You should quickly meet them.
+Abid: I heard  Noor and his brother Nehal are in grave danger.Gangsters are chasing them.
+Abid: You should quickly meet them.
 Player: I can't waste any time.I'm on my way. 
 => END
 
-
-~ Two
+~ second
+Player: Sir, have you seen Noor and Nehal?
+Labib: Only the man in the red tall building at the northmost lane can tell.
+Labib: But you'll have to answer his question.
+Labib: There are two individuals, a Knight and a Knave (or both).
+Labib: Identify them correctly
+=> END
+~ Rand
 Farhan : Some building gates are open and some are closed.
 Farhan: You'll never know unless you knock on the doors.
 => END 
@@ -13,38 +20,60 @@ Farhan: You'll never know unless you knock on the doors.
 
 
 ~ junc
-Player: Sir, do you know where Nur and Nehal are?
-Saad: Who are you?
-- I am their friend
-	set convo="had"
-	Player: We studied in DRMC together.
-	Saad: I see. I heard Modhu talking about them.
-	Saad: Take this locket and tell him I sent you.
-	Saad: He saw them the last time , he is to the north of here.
-	Player: OK sir.Thanks  .
-- I dont want to tell you.
-	Saad: I cannot tell you anything then. 
+Saad: Are you looking for the knight and the knave?
+Player: Yes , sir.
+Saad: Well well. One is to the north of here and the other to the south.
+Saad: Consider one of them to be knight or knave and try to find out
+Saad: Once you find their identity , Go to the red tall building located at the northmost lane .
+
 => END
 
-~ Modhu
-Player: Sir, I'm looking for Noor and Nehal.
-Modhu: Why should I tell you about them when i don't know you ?
-if convo=="had":
-	Player: Here, take a look at this locket.
-	Modhu: Ah, I see. I can trust you.
-	Modhu: Noor and Nehal are hiding in a building . They were being chased by the BSL .
-	Modhu: Go and check the Tall Red building east from here. That is where they were seen earlier.
-else 
-	Player: I am their friend.
-	Modhu: I cannot trust your word only.Talk to someone first to confirm your identity.
+~ knight
+Rahim : My name is Rahim.
+Rahim: Karim (to the south of here) is not a knight.
+
 => END 
 
+~ knave
+Karim : My name is Karim
+Karim: Rahim (to the north) is a knight
+=> END 
 ~ red
-Player: Sir, I was looking for Noor and Nehal.
-Monjur : I saw you at DRMC once, you must be their friend.
-Monjur: Don't worry they are safe. 
-Monjur: Go and find a small building that is in the middle of three small ones and two tall ones. 
-Monjur: They are hiding there.
-Player: I'll hurry and find the building then. 
+Wahab: Hello there.
 
+if convo =="had"
+	Wahab: They are located at the only green building in the lane just to the south of here.
+	Wahab: There is a building called shop to its left also.
+else:
+	
+	Player: Sir, I'm looking for Noor and Nehal.
+	Wahab: I saw them indeed but you have to answer my question to gain my trust.
+	Wahab: Their friend is indeed smart.
+	Wahab: Who is the knight and knave?
+	- Rahim is Knight and Karim is Knave
+		set convo="had"
+		Wahab: You are correct.
+		Wahab: I believe that you are their friend.
+		Wahab: They are located at the only green building in the lane just to the south of here.
+		Wahab: There is a building called shop to its left also.
+	- Rahim is Knave and Karim is Knight.
+		Wahab: You are incorrect. 
+	- Both are Knights
+		Wahab: You are incorrect. 
+	- Both are Knaves
+		Wahab: You are incorrect. 
+=> END 
+
+~ level
+Player: Noor , I found you finally.
+Noor : I was so scared.
+Player: What happened?
+Noor: We were at the protest and these goons suddenly started chasing us.
+Noor: I managed to escape somehow but they kidnapped Nehal.
+Player: We must save him.
+Noor: I know where they are. Go to the gate behind me and prepare yourself.
+ 
+=> END
+~ chunu
+Zarif: What's going on in our nation? I'm so scared .
 => END

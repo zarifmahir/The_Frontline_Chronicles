@@ -1,15 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://dobrkctu53onq"]
+[gd_scene load_steps=23 format=3 uid="uid://dobrkctu53onq"]
 
 [ext_resource type="Script" path="res://scripts/base_scene.gd" id="1_jen3o"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_vjsc5"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="3_x1fyd"]
 [ext_resource type="Texture2D" uid="uid://dhylcprk7oqk6" path="res://assets/Office/Little_Bits_office_objects.png" id="4_5ol0v"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="6_dnntw"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trig_2.tscn" id="6_e4ux3"]
+[ext_resource type="PackedScene" uid="uid://djhg01ufwxxdu" path="res://scenes/scene_trig_2.tscn" id="6_e4ux3"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="7_vl5h6"]
-[ext_resource type="PackedScene" uid="uid://dy7jg8vsv3bqt" path="res://scenes/npc.tscn" id="8_er8i0"]
+[ext_resource type="PackedScene" uid="uid://8tcacmn7hd8j" path="res://scenes/npc.tscn" id="8_er8i0"]
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="9_lk04s"]
 [ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="10_ccdx0"]
+[ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="10_fn0jt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8k3s"]
 texture = ExtResource("2_vjsc5")
@@ -798,6 +799,8 @@ position = Vector2(111, 31)
 
 [node name="Actionables" parent="Red" instance=ExtResource("9_lk04s")]
 position = Vector2(-111, -31)
+dialogue_resource = ExtResource("10_fn0jt")
+dialogue_start = "red"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Red/Actionables"]
 position = Vector2(113, 31)

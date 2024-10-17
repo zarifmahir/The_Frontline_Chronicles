@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jp1uc"]
 [ext_resource type="FontFile" uid="uid://rmcty560ykg3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_3vraf"]
 [ext_resource type="FontFile" uid="uid://bohtyftpq75ui" path="res://assets/fonts/PixelOperator8.ttf" id="3_fs3u4"]
-[ext_resource type="PackedScene" path="res://scenes/options_menu.tscn" id="5_to4aj"]
+[ext_resource type="PackedScene" uid="uid://d4kec34vycma4" path="res://scenes/options_menu.tscn" id="5_to4aj"]
 [ext_resource type="AudioStream" uid="uid://5son23tb41je" path="res://assets/music/Dark Fantasy Tiktok Song (slowed  reverb) Yamaha - Dorian concept.mp3" id="6_1eyy0"]
 
 [node name="Main_Menu" type="Control"]

@@ -1,23 +1,20 @@
-[gd_scene load_steps=39 format=3 uid="uid://bq6navt7wpc1j"]
+[gd_scene load_steps=36 format=3 uid="uid://bq6navt7wpc1j"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_q37l1"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_5u5gq"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trig_4.tscn" id="2_a0oal"]
+[ext_resource type="PackedScene" uid="uid://c22bnlvdcp8sv" path="res://scenes/scene_trig_4.tscn" id="2_a0oal"]
 [ext_resource type="Texture2D" uid="uid://8weu6mk7us4w" path="res://assets/Background/BG_Normal/galletcity_tiles.png" id="3_n6kwi"]
 [ext_resource type="PackedScene" uid="uid://t53lbpbapxsb" path="res://scenes/scene_trigger_1.tscn" id="4_16u4k"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="4_av7yx"]
 [ext_resource type="Texture2D" uid="uid://nplysv0nreq2" path="res://assets/Background/BG_Normal/TilesetFloor.png" id="4_r4ydk"]
-[ext_resource type="PackedScene" uid="uid://dy7jg8vsv3bqt" path="res://scenes/npc.tscn" id="5_pnssq"]
+[ext_resource type="PackedScene" uid="uid://8tcacmn7hd8j" path="res://scenes/npc.tscn" id="5_pnssq"]
 [ext_resource type="PackedScene" uid="uid://b2xi28lpqu4uk" path="res://scenes/actionables.tscn" id="5_tbupf"]
 [ext_resource type="Resource" uid="uid://168ard6rp7n5" path="res://Dialogue/Dialogue.dialogue" id="6_3eaet"]
 [ext_resource type="Script" path="res://scripts/scene_trigger_1.gd" id="9_36djh"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
-[ext_resource type="PackedScene" path="res://scenes/scene_trig_3.tscn" id="11_qy0ut"]
+[ext_resource type="PackedScene" uid="uid://djhg01ufwxxdu" path="res://scenes/scene_trig_2.tscn" id="9_uk5uo"]
+[ext_resource type="PackedScene" uid="uid://0k4pn7ae40co" path="res://scenes/scene_trig_3.tscn" id="11_qy0ut"]
 [ext_resource type="PackedScene" uid="uid://cb15nbocn0ngr" path="res://scenes/hearts_container.tscn" id="13_hw6op"]
-[ext_resource type="PackedScene" uid="uid://b71rq87wiisio" path="res://scenes/enemy_1.tscn" id="14_5kp7n"]
-[ext_resource type="PackedScene" uid="uid://db32afdf17acm" path="res://scenes/enemy_2.tscn" id="15_2xqjn"]
 [ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="17_fn27b"]
-[ext_resource type="PackedScene" uid="uid://c6mjowo1hdse5" path="res://scenes/enemy_3.tscn" id="19_f0box"]
 [ext_resource type="AudioStream" uid="uid://b46q0rd5tl6h5" path="res://assets/music/calm_game_music_1-49209.mp3" id="19_rk7b0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n18w1"]
@@ -1175,7 +1172,7 @@ shape = SubResource("CircleShape2D_otrwe")
 [node name="Detective" parent="." instance=ExtResource("4_av7yx")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(552, 592)
+position = Vector2(2144, 95)
 knockbackpower = 1500
 
 [node name="Followcam" type="Camera2D" parent="Detective"]
@@ -1184,30 +1181,32 @@ zoom = Vector2(2.6, 2.6)
 limit_right = 100000000
 
 [node name="npc(junction)" parent="." instance=ExtResource("5_pnssq")]
-position = Vector2(2182, 66)
+position = Vector2(1484, 74)
 
 [node name="Actionables" parent="npc(junction)" instance=ExtResource("5_tbupf")]
 dialogue_resource = ExtResource("6_3eaet")
-dialogue_start = "junc"
+dialogue_start = "second"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc(junction)/Actionables"]
 shape = SubResource("CircleShape2D_4q72c")
 
 [node name="npc_2" parent="." instance=ExtResource("5_pnssq")]
-position = Vector2(2272, 556)
+position = Vector2(2180, 70)
 
 [node name="Actionables" parent="npc_2" instance=ExtResource("5_tbupf")]
 dialogue_resource = ExtResource("6_3eaet")
-dialogue_start = "npc2"
+dialogue_start = "junc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc_2/Actionables"]
 shape = SubResource("CircleShape2D_cc3og")
 
 [node name="npc_3" parent="." instance=ExtResource("5_pnssq")]
-position = Vector2(2278, 923)
+z_index = 1
+position = Vector2(2190, -470)
 
 [node name="Actionables" parent="npc_3" instance=ExtResource("5_tbupf")]
 dialogue_resource = ExtResource("6_3eaet")
+dialogue_start = "knight"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc_3/Actionables"]
 position = Vector2(1, -1)
@@ -1215,10 +1214,11 @@ shape = SubResource("CircleShape2D_fqd11")
 
 [node name="npc_4" parent="." instance=ExtResource("5_pnssq")]
 z_index = 1
-position = Vector2(2410, -558)
+position = Vector2(2232, 549)
 
 [node name="Actionables" parent="npc_4" instance=ExtResource("5_tbupf")]
 dialogue_resource = ExtResource("6_3eaet")
+dialogue_start = "knave"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc_4/Actionables"]
 position = Vector2(1, 1)
@@ -1227,12 +1227,12 @@ shape = SubResource("CircleShape2D_kipa5")
 [node name="npc_5" parent="." instance=ExtResource("5_pnssq")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(2162, -395)
+position = Vector2(2262, 931)
 up_direction = Vector2(0, 1)
 
 [node name="Actionables" parent="npc_5" instance=ExtResource("5_tbupf")]
 dialogue_resource = ExtResource("6_3eaet")
-dialogue_start = "Modhu"
+dialogue_start = "Rand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc_5/Actionables"]
 position = Vector2(-1, 0)
@@ -1243,6 +1243,7 @@ position = Vector2(2997, 60)
 
 [node name="Actionables" parent="npc_6" instance=ExtResource("5_tbupf")]
 dialogue_resource = ExtResource("6_3eaet")
+dialogue_start = "chunu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc_6/Actionables"]
 shape = SubResource("CircleShape2D_dapw3")
@@ -1259,10 +1260,10 @@ position = Vector2(2612, -539)
 
 [node name="Insidebuilding3" type="Marker2D" parent="EntranceMarkers"]
 z_index = 1
-position = Vector2(2615, 78)
+position = Vector2(2876, 75)
 
 [node name="scene_trig2" parent="." instance=ExtResource("9_uk5uo")]
-position = Vector2(2613, -562)
+position = Vector2(2615, -555)
 script = ExtResource("9_36djh")
 connected_scene = "insidebuilding_2"
 
@@ -1272,7 +1273,7 @@ position = Vector2(-1.75, -1)
 shape = SubResource("RectangleShape2D_bltem")
 
 [node name="Scene_trig3" parent="." instance=ExtResource("11_qy0ut")]
-position = Vector2(2615, 25)
+position = Vector2(2876, 20)
 script = ExtResource("9_36djh")
 connected_scene = "insidebuilding_3"
 
@@ -1299,24 +1300,6 @@ shape = SubResource("RectangleShape2D_sdpj3")
 [node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("13_hw6op")]
 metadata/_edit_use_anchors_ = true
 
-[node name="Enemy1" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("14_5kp7n")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(873, 618)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Enemy1"]
-position = Vector2(-1, -66)
-
-[node name="Enemy2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("15_2xqjn")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(1205, 622)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Enemy2"]
-position = Vector2(-2, -57)
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1, 0)
 stream = ExtResource("17_fn27b")
@@ -1328,10 +1311,6 @@ stream = ExtResource("19_rk7b0")
 volume_db = -15.0
 autoplay = true
 bus = &"Music"
-
-[node name="enemy3" parent="." instance=ExtResource("19_f0box")]
-z_index = 1
-position = Vector2(2220, 324)
 
 [connection signal="body_entered" from="scene_trig2" to="scene_trig2" method="_on_body_entered"]
 [connection signal="body_entered" from="Scene_trig3" to="Scene_trig3" method="_on_body_entered"]
