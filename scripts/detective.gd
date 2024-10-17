@@ -21,6 +21,7 @@ signal healthchanged
 
 
 var direction
+var direction2
 var lastAnimeDirection: String = "Down"
 var ishurt: bool = false
 var isAttacking: bool = false
@@ -29,6 +30,7 @@ func detective():
 	pass
 
 func _ready() -> void:
+	direction = "idle"
 	effects.play("RESET")
 	weapon.disable()
 	
@@ -37,11 +39,15 @@ func updateAnimation():
 	if velocity.length()==0:
 		if(animations.is_playing()):
 			animations.stop()
+			direction2 = "stp"
 	else:
-		direction="Down"
+		direction = "Down"
+		
 		if velocity.x<0:direction="Left"
 		elif velocity.x>0:direction="Right"
 		elif velocity.y<0:direction="Up"
+		elif velocity.y>0: direction = "Down"
+		direction2 = direction
 		animations.play("walk"+direction)
 		lastAnimeDirection = direction
 		

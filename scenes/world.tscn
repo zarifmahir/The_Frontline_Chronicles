@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b71rq87wiisio" path="res://scenes/enemy_1.tscn" id="14_5kp7n"]
 [ext_resource type="PackedScene" uid="uid://db32afdf17acm" path="res://scenes/enemy_2.tscn" id="15_2xqjn"]
 [ext_resource type="AudioStream" uid="uid://cx53vfkcq8oya" path="res://assets/music/mixkit-old-church-door-open-193.mp3" id="17_fn27b"]
-[ext_resource type="PackedScene" uid="uid://c6mjowo1hdse5" path="res://scenes/enemy_3.tscn" id="19_f0box"]
+[ext_resource type="PackedScene" uid="uid://c6mjowo1hdse5" path="res://scenes/Friend.tscn" id="19_f0box"]
 [ext_resource type="AudioStream" uid="uid://b46q0rd5tl6h5" path="res://assets/music/calm_game_music_1-49209.mp3" id="19_rk7b0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n18w1"]

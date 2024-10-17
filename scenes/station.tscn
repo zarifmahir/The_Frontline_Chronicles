@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dryvt4d4uc4w"]
+[gd_scene load_steps=18 format=3 uid="uid://dryvt4d4uc4w"]
 
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="1_dyu3w"]
 [ext_resource type="Texture2D" uid="uid://dhylcprk7oqk6" path="res://assets/Office/Little_Bits_office_objects.png" id="2_hajyp"]
@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="4_mi8uq"]
 [ext_resource type="PackedScene" uid="uid://ueue47hblxg4" path="res://scenes/detective.tscn" id="5_bklt0"]
 [ext_resource type="AudioStream" uid="uid://dmcjh5ntjjlfu" path="res://assets/music/theme_swamp.mp3" id="6_xjn6u"]
+[ext_resource type="PackedScene" uid="uid://b71rq87wiisio" path="res://scenes/enemy_1.tscn" id="7_labwt"]
+[ext_resource type="PackedScene" uid="uid://db32afdf17acm" path="res://scenes/enemy_2.tscn" id="8_3vlcg"]
+[ext_resource type="PackedScene" uid="uid://dvgiff6xh672s" path="res://scenes/enemy_3.tscn" id="9_appeg"]
+[ext_resource type="PackedScene" uid="uid://c6mjowo1hdse5" path="res://scenes/Friend.tscn" id="10_wpac5"]
+[ext_resource type="PackedScene" uid="uid://7513i572eehn" path="res://scenes/hearts_container2.tscn" id="11_2sdcu"]
+[ext_resource type="Script" path="res://scripts/hearts_container2.gd" id="12_vwiqr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4r5n4"]
 texture = ExtResource("1_dyu3w")
@@ -810,3 +816,28 @@ stream = ExtResource("6_xjn6u")
 volume_db = -15.0
 autoplay = true
 bus = &"Music"
+
+[node name="Enemy1" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("7_labwt")]
+position = Vector2(736, 449)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy1"]
+position = Vector2(-126, -107)
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("8_3vlcg")]
+position = Vector2(327, 898)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy2"]
+position = Vector2(45, 158)
+
+[node name="Enemy3" parent="." instance=ExtResource("9_appeg")]
+position = Vector2(688, 53)
+
+[node name="Friend" parent="." instance=ExtResource("10_wpac5")]
+position = Vector2(949, 241)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("11_2sdcu")]
+script = ExtResource("12_vwiqr")

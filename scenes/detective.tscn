@@ -8,7 +8,6 @@
 [sub_resource type="Animation" id="Animation_ugdl7"]
 resource_name = "AttackDown"
 length = 0.2
-loop_mode = 2
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -90,7 +89,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_ojhtx"]
 resource_name = "AttackRight"
-length = 0.4
+length = 0.2
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -99,10 +98,10 @@ tracks/0/path = NodePath("weapon:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [2.25671, 1.55334, 1.00705, -1.60396]
+"values": [2.25671, 1.55334, 1.00705]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -111,10 +110,10 @@ tracks/1/path = NodePath("weapon:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(10, -2), Vector2(10, -3), Vector2(10, -12), Vector2(10, 0)]
+"values": [Vector2(10, -2), Vector2(10, -3), Vector2(10, -12)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -168,57 +167,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(1, 4)]
-}
-
-[sub_resource type="Animation" id="Animation_vvm46"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Direction:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("weapon:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2.0944]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = false
-tracks/3/path = NodePath("weapon:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_myhw3"]
@@ -341,17 +289,69 @@ tracks/1/keys = {
 "values": [3.14159]
 }
 
+[sub_resource type="Animation" id="Animation_vvm46"]
+resource_name = "walkidle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Direction:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("weapon:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0944]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("weapon:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 2)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rot2f"]
 _data = {
 "AttackDown": SubResource("Animation_ugdl7"),
 "AttackLeft": SubResource("Animation_s6kif"),
 "AttackRight": SubResource("Animation_ojhtx"),
 "AttackUp": SubResource("Animation_ygrxf"),
-"RESET": SubResource("Animation_vvm46"),
 "walkDown": SubResource("Animation_myhw3"),
 "walkLeft": SubResource("Animation_f1ulk"),
 "walkRight": SubResource("Animation_hfxlx"),
-"walkUp": SubResource("Animation_gsivt")
+"walkUp": SubResource("Animation_gsivt"),
+"walkidle": SubResource("Animation_vvm46")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50lid"]
@@ -404,7 +404,7 @@ _data = {
 
 [node name="Detective" type="CharacterBody2D"]
 position = Vector2(3, -4)
-collision_layer = 9
+collision_layer = 265
 script = ExtResource("1_rc8jv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -415,6 +415,7 @@ scale = Vector2(1.63281, 1.32813)
 texture = ExtResource("2_08wgp")
 hframes = 4
 vframes = 7
+frame = 16
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 offset_left = -18.9474
