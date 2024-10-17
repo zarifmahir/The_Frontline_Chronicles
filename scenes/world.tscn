@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bq6navt7wpc1j"]
+[gd_scene load_steps=40 format=3 uid="uid://bq6navt7wpc1j"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_q37l1"]
 [ext_resource type="Texture2D" uid="uid://cydgt2hvqfnr6" path="res://assets/Background/BG_Normal/CP_V1.0.4.png" id="2_5u5gq"]
@@ -1118,7 +1118,19 @@ size = Vector2(67, 60.5)
 size = Vector2(660, 401)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdpj3"]
-size = Vector2(694, 322)
+size = Vector2(694, 371)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v10a"]
+size = Vector2(632, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5otj"]
+size = Vector2(632, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7nsx"]
+size = Vector2(632, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e3fv"]
+size = Vector2(786, 20)
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -1292,7 +1304,7 @@ shape = SubResource("RectangleShape2D_c52u3")
 position = Vector2(2637, -188)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-14, 505)
+position = Vector2(-14, 529.5)
 shape = SubResource("RectangleShape2D_sdpj3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -1311,6 +1323,25 @@ stream = ExtResource("19_rk7b0")
 volume_db = -15.0
 autoplay = true
 bus = &"Music"
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(386, 729)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(156, -52)
+shape = SubResource("RectangleShape2D_7v10a")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(148, -202)
+shape = SubResource("RectangleShape2D_g5otj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(147, 101)
+shape = SubResource("RectangleShape2D_n7nsx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(2282, 172)
+shape = SubResource("RectangleShape2D_5e3fv")
 
 [connection signal="body_entered" from="scene_trig2" to="scene_trig2" method="_on_body_entered"]
 [connection signal="body_entered" from="Scene_trig3" to="Scene_trig3" method="_on_body_entered"]
