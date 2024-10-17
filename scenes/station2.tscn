@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://cc3kbw1djw6np"]
+[gd_scene load_steps=20 format=3 uid="uid://cc3kbw1djw6np"]
 
+[ext_resource type="Script" path="res://scripts/station_2.gd" id="1_1gdqj"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="2_hmkm4"]
 [ext_resource type="Texture2D" uid="uid://dhylcprk7oqk6" path="res://assets/Office/Little_Bits_office_objects.png" id="3_ut76x"]
 [ext_resource type="Texture2D" uid="uid://b47kx58b2f8e6" path="res://assets/Office/Little_Bits_office_walls.png" id="4_r7pih"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b4wit11oooo6r" path="res://scenes/enemy_4.tscn" id="9_ulmt0"]
 [ext_resource type="PackedScene" uid="uid://dvgiff6xh672s" path="res://scenes/enemy_3.tscn" id="10_36jkr"]
 [ext_resource type="PackedScene" uid="uid://c6mjowo1hdse5" path="res://scenes/Friend.tscn" id="11_ojriq"]
+[ext_resource type="PackedScene" uid="uid://dwapuc0x2yda6" path="res://scenes/hearts_container2.tscn" id="12_3xa6g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4r5n4"]
 texture = ExtResource("2_hmkm4")
@@ -1529,6 +1531,7 @@ sources/5 = SubResource("TileSetAtlasSource_llky0")
 sources/6 = SubResource("TileSetAtlasSource_m3eo8")
 
 [node name="Station2" type="Node2D"]
+script = ExtResource("1_1gdqj")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, 0)
@@ -1597,3 +1600,7 @@ scale = Vector2(2, 2)
 [node name="Friend" parent="." instance=ExtResource("11_ojriq")]
 position = Vector2(904, 165)
 scale = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("12_3xa6g")]
