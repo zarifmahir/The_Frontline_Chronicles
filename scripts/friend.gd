@@ -45,4 +45,4 @@ func _on_detectionarea_body_entered(body: Node2D) -> void:
 func _on_detectionarea_body_exited(body: Node2D) -> void:
 	if body is Detect:
 		player = body
-		player_chase = true
+		player_chase = false

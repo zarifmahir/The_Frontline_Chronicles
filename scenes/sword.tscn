@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/sword.gd" id="1_wefj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qygtk"]
-size = Vector2(4, 13.5)
+size = Vector2(10, 14)
 
 [node name="Sword" type="Area2D"]
 collision_layer = 64
@@ -13,10 +13,10 @@ script = ExtResource("1_wefj1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -6)
-scale = Vector2(1.07143, 1.125)
+position = Vector2(2.98023e-08, -5)
+scale = Vector2(0.767857, 0.78125)
 texture = ExtResource("1_6o8vb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7.75)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_qygtk")

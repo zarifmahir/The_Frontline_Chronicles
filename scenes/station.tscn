@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dryvt4d4uc4w"]
+[gd_scene load_steps=20 format=3 uid="uid://dryvt4d4uc4w"]
 
 [ext_resource type="Script" path="res://scripts/station.gd" id="1_byfqb"]
 [ext_resource type="Texture2D" uid="uid://d0i62h8wjb48d" path="res://assets/Office/Little_Bits_Office_Floors.png" id="1_dyu3w"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dvgiff6xh672s" path="res://scenes/enemy_3.tscn" id="9_appeg"]
 [ext_resource type="PackedScene" uid="uid://c6mjowo1hdse5" path="res://scenes/Friend.tscn" id="10_wpac5"]
 [ext_resource type="PackedScene" uid="uid://dwapuc0x2yda6" path="res://scenes/hearts_container2.tscn" id="11_2sdcu"]
+[ext_resource type="PackedScene" path="res://scenes/scene_trig_4.tscn" id="13_j048u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4r5n4"]
 texture = ExtResource("1_dyu3w")
@@ -791,6 +792,9 @@ sources/1 = SubResource("TileSetAtlasSource_ja1hr")
 sources/2 = SubResource("TileSetAtlasSource_b164m")
 sources/3 = SubResource("TileSetAtlasSource_n0y7r")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t2cg"]
+size = Vector2(28, 31)
+
 [node name="Station" type="Node2D"]
 script = ExtResource("1_byfqb")
 
@@ -819,7 +823,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="Enemy1" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("7_labwt")]
-position = Vector2(736, 449)
+position = Vector2(729, 451)
 endPoint = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="Enemy1"]
@@ -833,12 +837,59 @@ endPoint = NodePath("Marker2D")
 position = Vector2(45, 158)
 
 [node name="Enemy3" parent="." instance=ExtResource("9_appeg")]
-position = Vector2(688, 53)
+position = Vector2(715, 51)
 
 [node name="Friend" parent="." instance=ExtResource("10_wpac5")]
-position = Vector2(949, 241)
+position = Vector2(1659, 1052)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("11_2sdcu")]
 alignment = 1
+
+[node name="Enemy4" parent="." instance=ExtResource("9_appeg")]
+position = Vector2(777, 635)
+
+[node name="Enemy5" parent="." instance=ExtResource("9_appeg")]
+position = Vector2(1424, 714)
+
+[node name="Enemy6" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("8_3vlcg")]
+position = Vector2(1445, 418)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy6"]
+position = Vector2(-10, -131)
+
+[node name="Enemy7" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("8_3vlcg")]
+position = Vector2(736, 1023)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy7"]
+position = Vector2(172, -30)
+
+[node name="Enemy8" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("7_labwt")]
+position = Vector2(1338, 1109)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy8"]
+position = Vector2(-4, -70)
+
+[node name="Enemy9" parent="." instance=ExtResource("9_appeg")]
+position = Vector2(1581, 400)
+
+[node name="Enemy10" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("8_3vlcg")]
+position = Vector2(1254, 82)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy10"]
+position = Vector2(1, -67)
+
+[node name="Scene_trig4" parent="." instance=ExtResource("13_j048u")]
+position = Vector2(1751, 921)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene_trig4"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_2t2cg")
+
+[node name="Friend2" parent="." instance=ExtResource("10_wpac5")]
+position = Vector2(376, 68)

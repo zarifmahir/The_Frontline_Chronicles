@@ -138,30 +138,34 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_syap2"]
-radius = 8.0
-height = 34.0
+radius = 4.0
+height = 8.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fcro4"]
-radius = 79.0
-height = 158.0
+radius = 60.0
+height = 120.0
 
 [node name="Friend" type="CharacterBody2D"]
 script = ExtResource("1_yqh6c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.47973, 0.412602)
+position = Vector2(-0.373731, -14.5)
+scale = Vector2(0.329966, 0.235772)
 sprite_frames = SubResource("SpriteFrames_3uufq")
 animation = &"idle"
 frame_progress = 0.83729
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(-1, -12)
 shape = SubResource("CapsuleShape2D_syap2")
 
 [node name="detectionarea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionarea"]
+position = Vector2(-4, -9)
 shape = SubResource("CapsuleShape2D_fcro4")
 
 [connection signal="body_entered" from="detectionarea" to="." method="_on_detectionarea_body_entered"]

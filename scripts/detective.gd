@@ -59,7 +59,7 @@ func handleInput():
 			actionables[0].action()
 			return
 	
-	var moveDirection=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+	var moveDirection=Input.get_vector("a","d","w","s")
 	velocity=moveDirection*speed
 	
 	if Input.is_action_just_pressed("attack"):
@@ -84,7 +84,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if ishurt: return
 	if area.name == "hitBox":
 		currentHealth -= 1
-		if currentHealth<0:
+		if currentHealth<1:
 			currentHealth = maxHealth
 			
 		healthchanged.emit(currentHealth)

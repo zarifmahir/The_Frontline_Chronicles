@@ -145,16 +145,16 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gtil5"]
-radius = 5.0
-height = 16.0
+radius = 8.0
+height = 22.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4cl2m"]
-radius = 5.0
-height = 16.0
+radius = 8.0
+height = 24.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lknej"]
-radius = 7.0
-height = 18.0
+radius = 9.0
+height = 26.0
 
 [sub_resource type="Animation" id="Animation_2h0je"]
 length = 0.001
@@ -248,18 +248,22 @@ script = ExtResource("1_k64pe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(2, 3)
+scale = Vector2(1.25, 1.375)
 sprite_frames = SubResource("SpriteFrames_813mn")
 animation = &"walkDown"
 frame = 3
 frame_progress = 0.145494
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 5)
 shape = SubResource("CapsuleShape2D_gtil5")
 
 [node name="hitBox" type="Area2D" parent="."]
 texture_filter = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
+position = Vector2(2, 6)
 shape = SubResource("CapsuleShape2D_4cl2m")
 
 [node name="hurtbux" type="Area2D" parent="."]
@@ -267,6 +271,7 @@ collision_layer = 0
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbux"]
+position = Vector2(2, 6)
 shape = SubResource("CapsuleShape2D_lknej")
 
 [node name="deatheffect" type="Sprite2D" parent="."]
